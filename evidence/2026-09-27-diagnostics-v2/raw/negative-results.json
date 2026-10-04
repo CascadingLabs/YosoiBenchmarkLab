@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "yosoi.benchmark.negative-results.v2",
+  "records": [
+    {
+      "id": "invalidXml",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"xml_malformed\" }\n"
+    },
+    {
+      "id": "xmlDoctype",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"xml_dtd_prohibited\" }\n"
+    },
+    {
+      "id": "xmlExternalEntity",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"xml_dtd_prohibited\" }\n"
+    },
+    {
+      "id": "invalidJson",
+      "documentClass": "sourceJson",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"malformed_json\" }\n"
+    },
+    {
+      "id": "invalidTextUtf8",
+      "documentClass": "sourceText",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"invalid_utf8\" }\n"
+    },
+    {
+      "id": "invalidRenderedDom",
+      "documentClass": "renderedDom",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"rendered_dom_invalid_json\" }\n"
+    },
+    {
+      "id": "invalidAccessibility",
+      "documentClass": "accessibilityTree",
+      "expectedStatus": "parseFailed",
+      "observedStatus": "parseFailed",
+      "passed": true,
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "Error: locate failed: ParseFailed { code: \"invalid_accessibility_json\" }\n"
+    },
+    {
+      "id": "recoverableHtml",
+      "documentClass": "sourceHtml",
+      "expectedStatus": "ok",
+      "observedStatus": "ok",
+      "passed": true,
+      "exitCode": 0,
+      "stdoutSha256": "c86ab6fa5f25cd8be18c99329d27dd4a26792c02eb8b8bd6b36880c779f93837",
+      "stderr": ""
+    }
+  ]
+}

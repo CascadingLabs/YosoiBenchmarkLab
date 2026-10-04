@@ -1,0 +1,153 @@
+{
+  "$schema": "../schemas/benchmark-spec.schema.json",
+  "schemaVersion": "yosoi.benchmark.spec.v1",
+  "id": "parser-selector-v1",
+  "status": "draftForAdapterReview",
+  "quadrant": "parserSelector",
+  "network": "forbidden",
+  "publicYosoiSurface": "rust",
+  "correctnessGate": {
+    "orderedValues": "exactUtf8",
+    "matchCount": "exact",
+    "outputDigest": "sha256",
+    "wrongOutputRanked": false,
+    "unsupportedRanked": false
+  },
+  "neutralLocatorVocabulary": [
+    "descendantElementLocalName",
+    "attributeTokenContains",
+    "attributeExactValue",
+    "documentOrder",
+    "projectAttributeValue",
+    "projectNormalizedDescendantText",
+    "cardinalityFirst",
+    "cardinalityAll"
+  ],
+  "phases": [
+    {"id": "parse", "input": "residentBytes", "output": "ordinaryParsedRepresentation"},
+    {"id": "locate", "input": "preparsedDocumentAndPrebuiltQuery", "output": "orderedMatches"},
+    {"id": "endToEnd", "input": "residentBytesAndPrebuiltQuery", "output": "materializedOrderedValues"},
+    {"id": "coldProcess", "input": "fixturePathAndTaskId", "output": "materializedValuesAndCleanExit"},
+    {"id": "resource", "input": "declaredOperationCount", "output": "cpuAndAggregateRss"}
+  ],
+  "sampling": {
+    "campaigns": 5,
+    "freshProcessPerCampaign": true,
+    "seededArmOrder": true,
+    "cavemanSamplesPerCampaign": 100,
+    "hardSamplesPerCampaign": 30,
+    "retainAllSamples": true,
+    "outlierRemoval": "forbidden",
+    "parallelArms": 1,
+    "rustWarmHarness": "criterionRs",
+    "criterion": {
+      "warmupSeconds": 3,
+      "measurementSeconds": 5,
+      "sampleSize": 100,
+      "confidenceLevel": 0.95,
+      "significanceLevel": 0.05,
+      "noiseThreshold": 0.01
+    }
+  },
+  "metrics": {
+    "required": [
+      "correctness",
+      "warmLatency",
+      "coldLatency",
+      "campaignWallTime",
+      "throughput",
+      "peakAggregateRss",
+      "meanAggregateRss",
+      "p95AggregateRss",
+      "rssArea",
+      "cpuTime",
+      "packageFootprint",
+      "outputSize",
+      "terminalOutcome"
+    ],
+    "identityMetadata": ["language", "runtime", "backend", "streamingMode"],
+    "secondary": [
+      "allocationCount",
+      "totalAllocatedBytes",
+      "maximumLiveAllocatedBytes",
+      "hardwareInstructions",
+      "cycles",
+      "cacheMisses",
+      "branchMisses",
+      "queryConstructionTime",
+      "dependencyCount",
+      "installTime"
+    ]
+  },
+  "workloads": [
+    {
+      "id": "parser.caveman.product-price.v1",
+      "class": "hero",
+      "generator": {
+        "id": "catalogV1",
+        "seed": "0x594f534f49",
+        "records": 128,
+        "targetApproxBytes": 90000
+      },
+      "locator": {
+        "cardinality": "first",
+        "steps": [
+          {"kind": "descendantElementLocalName", "value": "article"},
+          {"kind": "attributeTokenContains", "name": "class", "value": "product-card"},
+          {"kind": "attributeExactValue", "name": "data-sku", "value": "sku-000073"},
+          {"kind": "descendantElementLocalName", "value": "span"},
+          {"kind": "attributeTokenContains", "name": "class", "value": "price"}
+        ],
+        "projection": "normalizedDescendantText"
+      },
+      "expectedValues": ["USD 19.73"],
+      "heroPhase": "endToEnd"
+    },
+    {
+      "id": "parser.hard.catalog.v1",
+      "class": "hard",
+      "generator": {
+        "id": "catalogV1",
+        "seed": "0x594f534f49",
+        "records": 25000,
+        "minimumElements": 250000,
+        "minimumBytes": 12582912,
+        "maximumBytes": 33554432,
+        "selectedRecords": 64,
+        "features": [
+          "repeatedDistractors",
+          "unicode",
+          "impliedTableContainers",
+          "optionalEndTags",
+          "comments",
+          "scriptStyleText",
+          "characterReferences",
+          "boundedMalformedFragments",
+          "svgIslands"
+        ]
+      },
+      "expectedValues": "oracleManifestOrderedValues",
+      "rankedPhases": ["parse", "locate", "endToEnd", "resource"]
+    },
+    {
+      "id": "parser.publisher.scrapling-nested.v1",
+      "class": "publisherExact",
+      "publisher": "scrapling",
+      "nestedElements": 5000,
+      "resultPopulation": "publisherExactOnlyUntilSemanticParityIsFrozen"
+    },
+    {
+      "id": "parser.hard.recovery.v1",
+      "class": "correctnessStress",
+      "features": [
+        "deepNesting",
+        "misnestedFormatting",
+        "incompleteTables",
+        "duplicateAttributes",
+        "declaredDecodeErrors",
+        "namespaceEdges"
+      ],
+      "rankedPhases": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "yosoi.benchmark.coverage.v2",
+  "purpose": "internalNonKpiDiagnostics",
+  "requiredCells": 36,
+  "measuredCells": 36,
+  "documentClasses": [
+    "accessibilityTree",
+    "renderedDom",
+    "sourceHtml",
+    "sourceJson",
+    "sourceText",
+    "sourceXml"
+  ],
+  "queryFamilies": [
+    "accessibilityText",
+    "accessibleName",
+    "css",
+    "jsonPath",
+    "jsonPointer",
+    "regex",
+    "role",
+    "stateExpanded",
+    "textLiteral",
+    "treeText",
+    "xpath"
+  ],
+  "projections": [
+    "accessibilityText",
+    "accessibleName",
+    "attribute:data-id",
+    "captures:id",
+    "node",
+    "text",
+    "value"
+  ],
+  "conformanceCases": 30,
+  "negativeFixtures": 8,
+  "extractionLanes": 6,
+  "extractionLimitCases": 3,
+  "allConformancePassed": true,
+  "allNegativePassed": true,
+  "allExtractionLimitsPassed": true,
+  "crossFormatAggregate": false,
+  "publicKpi": false,
+  "publishedReleaseArtifact": false,
+  "allocationEvidence": "notCollected"
+}

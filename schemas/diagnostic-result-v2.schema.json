@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yosoi.dev/benchmarks/schemas/diagnostic-result-v2.schema.json",
+  "title": "Yosoi Benchmark Lab V2 diagnostic arm result",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schemaVersion",
+    "armId",
+    "cellId",
+    "documentClass",
+    "queryFamily",
+    "projection",
+    "phase",
+    "terminalStatus",
+    "matchCount",
+    "values",
+    "outputSha256",
+    "samplesNs",
+    "operationsPerSample",
+    "inputBytes"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "yosoi.benchmark.diagnostic-result.v2"},
+    "armId": {"type": "string", "minLength": 1},
+    "cellId": {"type": "string", "minLength": 1},
+    "documentClass": {
+      "enum": [
+        "sourceHtml",
+        "sourceXml",
+        "sourceJson",
+        "sourceText",
+        "renderedDom",
+        "accessibilityTree",
+        "contractHtml"
+      ]
+    },
+    "queryFamily": {"type": "string", "minLength": 1},
+    "projection": {"type": "string", "minLength": 1},
+    "phase": {"type": "string", "minLength": 1},
+    "terminalStatus": {"enum": ["ok", "wrongOutput", "unsupported", "failed"]},
+    "matchCount": {"type": "integer", "minimum": 0},
+    "recordCount": {"type": ["integer", "null"], "minimum": 0},
+    "values": {"type": "array"},
+    "outputSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "samplesNs": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+    "operationsPerSample": {"type": "integer", "minimum": 1},
+    "inputBytes": {"type": "integer", "minimum": 0}
+  }
+}

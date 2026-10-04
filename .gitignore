@@ -1,0 +1,12 @@
+/results/**
+!/results/.gitkeep
+/work/
+/downloads/
+/target/
+/.venv/
+/node_modules/
+/adapters/http/node-crawlee/storage/
+/adapters/browser/node-crawlee/storage/
+*.pyc
+__pycache__/
+.DS_Store

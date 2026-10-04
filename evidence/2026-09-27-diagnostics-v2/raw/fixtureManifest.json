@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "yosoi.benchmark.fixtures.v2",
+  "targetIndex": 17,
+  "fixtures": [
+    {
+      "documentClass": "sourceHtml",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.html",
+      "bytes": 10618,
+      "sha256": "4fa5178fabb1975b22754ddb5b70d607e42d2cb4ccac1eca7cdb4cd08c5b3511"
+    },
+    {
+      "documentClass": "sourceXml",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.xml",
+      "bytes": 4960,
+      "sha256": "3eccdfb9da30c82ae3a10935ed5154194349b4dd88782fb7db5c559b1ab7623a"
+    },
+    {
+      "documentClass": "sourceJson",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.json",
+      "bytes": 3695,
+      "sha256": "30e6c710aa1000ef2a06dc25fa8f106067403507e049fb6cb53bfb4cb8ebd03b"
+    },
+    {
+      "documentClass": "sourceText",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.txt",
+      "bytes": 1468,
+      "sha256": "db276bca5e4433fa22b3037d44dca9eabbd980c5df75b8ecbe031f095869035f"
+    },
+    {
+      "documentClass": "renderedDom",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.dom.json",
+      "bytes": 26934,
+      "sha256": "1e5598e6d36fc293a76868a03f4ba8ebe7e23617942bd81fe73940ea411ca09e"
+    },
+    {
+      "documentClass": "accessibilityTree",
+      "size": "tiny",
+      "records": 32,
+      "path": "tiny.ax.json",
+      "bytes": 6120,
+      "sha256": "5f1e9677ed1f11fdc9ebd1460510bc8b91be3d6b96e8160ecc6c3d3f2ccf050b"
+    },
+    {
+      "documentClass": "sourceHtml",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.html",
+      "bytes": 21154,
+      "sha256": "63665cb0342b7a958d86ab1a3aae42fb458c00ec5946c0f4b801a08f3badc793"
+    },
+    {
+      "documentClass": "sourceXml",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.xml",
+      "bytes": 9824,
+      "sha256": "e20473d991e9120906cc576a0b4c307cfef153d82a5721c714011acbd1354bc5"
+    },
+    {
+      "documentClass": "sourceJson",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.json",
+      "bytes": 7383,
+      "sha256": "6965b1b7d8d0afc3852dad9a0caaa2d8c97e5262d8b6cd93fd6e0e3756a9136f"
+    },
+    {
+      "documentClass": "sourceText",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.txt",
+      "bytes": 2940,
+      "sha256": "b19b999b60781de3eef3d21d23a462bde5e1475027243fc0a332a0a4224f7e66"
+    },
+    {
+      "documentClass": "renderedDom",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.dom.json",
+      "bytes": 53814,
+      "sha256": "75f7ad2b70b8b29f0eae7762bffc6ae28fdf9f15e9444b52de3a2c859c8e0023"
+    },
+    {
+      "documentClass": "accessibilityTree",
+      "size": "medium",
+      "records": 64,
+      "path": "medium.ax.json",
+      "bytes": 12008,
+      "sha256": "259eebf5320686f4b7ce2ed38753aa4202935affd6b04251ac103b4a2e8c7c3c"
+    },
+    {
+      "documentClass": "sourceHtml",
+      "size": "large",
+      "records": 4096,
+      "path": "large.html",
+      "bytes": 1355705,
+      "sha256": "9466afb21598b1dfd8e24ed8c2aa6d56d18c46a49054f959e00b25d8e55ce045"
+    },
+    {
+      "documentClass": "sourceXml",
+      "size": "large",
+      "records": 4096,
+      "path": "large.xml",
+      "bytes": 629780,
+      "sha256": "c35f818cb313e844ebe851ee735c85ede7df46f5ec197986bb41770fbc3033d3"
+    },
+    {
+      "documentClass": "sourceJson",
+      "size": "large",
+      "records": 4096,
+      "path": "large.json",
+      "bytes": 479086,
+      "sha256": "864f0e25289f85bb4fd5e6ac9dd66cb90c20bd530560bb2ba5a3b3052e750c2f"
+    },
+    {
+      "documentClass": "sourceText",
+      "size": "large",
+      "records": 4096,
+      "path": "large.txt",
+      "bytes": 195504,
+      "sha256": "c536795710d94262a96083577fa772413dcded1cce9cee301bfcf4c3322cb0cb"
+    },
+    {
+      "documentClass": "renderedDom",
+      "size": "large",
+      "records": 4096,
+      "path": "large.dom.json",
+      "bytes": 3531688,
+      "sha256": "9aff1752347824345ecdfb0f277ac5d266502fa95936a54910c25c8f3800fd52"
+    },
+    {
+      "documentClass": "accessibilityTree",
+      "size": "large",
+      "records": 4096,
+      "path": "large.ax.json",
+      "bytes": 768080,
+      "sha256": "29b06088eb12735ad1b59e7a9345395f1daaf3c1981f1dfb7d16576df6e95b36"
+    }
+  ],
+  "negativeFixtures": [
+    {
+      "id": "invalidXml",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "path": "negative/invalidXml",
+      "bytes": 28,
+      "sha256": "254ec3c881391939649ba532257fe24b5f2147117d77e677c10ac6975914acf2"
+    },
+    {
+      "id": "xmlDoctype",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "path": "negative/xmlDoctype",
+      "bytes": 53,
+      "sha256": "b56bcf7f208f6e6db8148cc4796fc8c945b3f53028d95928ab0997c08bd45a74"
+    },
+    {
+      "id": "xmlExternalEntity",
+      "documentClass": "sourceXml",
+      "expectedStatus": "parseFailed",
+      "path": "negative/xmlExternalEntity",
+      "bytes": 86,
+      "sha256": "0339649768d7d7b836c225870dcbae2278ebad7793f6138e75ae4ba43bc38eb0"
+    },
+    {
+      "id": "invalidJson",
+      "documentClass": "sourceJson",
+      "expectedStatus": "parseFailed",
+      "path": "negative/invalidJson",
+      "bytes": 14,
+      "sha256": "3dff06cad316bba758dd89c90245acb45fe2800322e1e457eb482f8516846de6"
+    },
+    {
+      "id": "invalidTextUtf8",
+      "documentClass": "sourceText",
+      "expectedStatus": "parseFailed",
+      "path": "negative/invalidTextUtf8",
+      "bytes": 8,
+      "sha256": "eb56a176760ebb0ccd566dadb2b1e98828a41a9fccf9e9195b2d67d4254fe298"
+    },
+    {
+      "id": "invalidRenderedDom",
+      "documentClass": "renderedDom",
+      "expectedStatus": "parseFailed",
+      "path": "negative/invalidRenderedDom",
+      "bytes": 29,
+      "sha256": "d43aa253c6114c71c4dbc9cd344876b7dc871975a820f47a052a4a02fb7b6928"
+    },
+    {
+      "id": "invalidAccessibility",
+      "documentClass": "accessibilityTree",
+      "expectedStatus": "parseFailed",
+      "path": "negative/invalidAccessibility",
+      "bytes": 29,
+      "sha256": "d43aa253c6114c71c4dbc9cd344876b7dc871975a820f47a052a4a02fb7b6928"
+    },
+    {
+      "id": "recoverableHtml",
+      "documentClass": "sourceHtml",
+      "expectedStatus": "ok",
+      "path": "negative/recoverableHtml",
+      "bytes": 37,
+      "sha256": "3798a29ef3b37e2e8757ad2b32d28911a4fb0e82674ea0853151e81983cab650"
+    }
+  ]
+}

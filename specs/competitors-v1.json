@@ -1,0 +1,47 @@
+{
+  "$schema": "../schemas/competitor-roster.schema.json",
+  "schemaVersion": "yosoi.benchmark.competitors.v1",
+  "requiredQuadrants": [
+    "parserSelector",
+    "httpFramework",
+    "renderedBrowserRequest"
+  ],
+  "admission": {
+    "openSource": true,
+    "localOrSelfHosted": true,
+    "paidApiRequired": false,
+    "hostedOnlyCapabilityAllowed": false
+  },
+  "parserSelector": [
+    {"id": "yosoiRust", "role": "required", "backend": "yosoiDocumentsLocators"},
+    {"id": "scraplingParser", "role": "required", "backend": "publisherPinned"},
+    {"id": "parsel", "role": "required", "backend": "lxml"},
+    {"id": "lxml", "role": "required", "backend": "libxml2"},
+    {"id": "selectolaxLexbor", "role": "required", "backend": "lexbor"},
+    {"id": "beautifulSoupHtmlParser", "role": "required", "backend": "pythonHtmlParser"},
+    {"id": "beautifulSoupLxml", "role": "required", "backend": "lxml"},
+    {"id": "rustScraper", "role": "required", "backend": "html5everSelectors"},
+    {"id": "goquery", "role": "required", "backend": "netHtmlCascadia"},
+    {"id": "html5everRaw", "role": "secondary", "backend": "html5ever"},
+    {"id": "lolHtml", "role": "unrankedStreamingExperiment", "backend": "lolHtml"}
+  ],
+  "httpFramework": [
+    {"id": "yosoiRequest", "role": "required"},
+    {"id": "scrapy", "role": "required"},
+    {"id": "scraplingFetcher", "role": "required"},
+    {"id": "crawleeCheerio", "role": "required"},
+    {"id": "colly", "role": "required"}
+  ],
+  "renderedBrowserRequest": [
+    {"id": "yosoiBrowserRequest", "role": "required"},
+    {"id": "scraplingDynamicFetcher", "role": "required"},
+    {"id": "crawleePlaywright", "role": "required"},
+    {"id": "crawl4aiRequest", "role": "candidate"},
+    {"id": "directDriverControl", "role": "atMostOneControl"}
+  ],
+  "optionalNonBlocking": [
+    "selfHostedProductSuites",
+    "adaptiveAlgorithms",
+    "aiExtraction"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "campaigns": 5,
+  "fixture": "/tmp/yosoi-benchmark-work/fixtures/cavemanCatalog.html",
+  "fixtureBytes": 87928,
+  "command": "cargo bench --locked --bench caveman -- --warm-up-time 3 --measurement-time 5 --sample-size 100 --noplot --save-baseline <campaign>"
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yosoi.dev/benchmarks/schemas/competitor-roster.v1.json",
+  "title": "Yosoi Benchmark Competitor Roster",
+  "type": "object",
+  "required": ["schemaVersion", "requiredQuadrants", "admission", "parserSelector", "httpFramework", "renderedBrowserRequest"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schemaVersion": {"const": "yosoi.benchmark.competitors.v1"},
+    "requiredQuadrants": {
+      "const": ["parserSelector", "httpFramework", "renderedBrowserRequest"]
+    },
+    "admission": {
+      "type": "object",
+      "required": ["openSource", "localOrSelfHosted", "paidApiRequired", "hostedOnlyCapabilityAllowed"],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "parserSelector": {"$ref": "#/$defs/candidates"},
+    "httpFramework": {"$ref": "#/$defs/candidates"},
+    "renderedBrowserRequest": {"$ref": "#/$defs/candidates"},
+    "optionalNonBlocking": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "role"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][A-Za-z0-9]*$"},
+          "role": {"type": "string"},
+          "backend": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

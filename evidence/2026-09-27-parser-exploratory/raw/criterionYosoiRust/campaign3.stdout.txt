@@ -1,0 +1,15 @@
+yosoiRust/parse         time:   [1.0966 ms 1.1035 ms 1.1128 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+
+yosoiRust/locate        time:   [107.81 µs 108.70 µs 109.80 µs]
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+
+yosoiRust/endToEnd      time:   [1.1848 ms 1.1898 ms 1.1963 ms]
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) high mild
+  3 (3.00%) high severe
+

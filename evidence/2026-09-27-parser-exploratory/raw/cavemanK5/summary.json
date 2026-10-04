@@ -1,0 +1,701 @@
+{
+  "schemaVersion": "yosoi.benchmark.exploratory-results.v1",
+  "fixtureManifest": {
+    "schemaVersion": "yosoi.benchmark.fixtures.v1",
+    "seed": "0x594f534f49",
+    "fixtures": [
+      {
+        "id": "cavemanCatalog",
+        "path": "cavemanCatalog.html",
+        "bytes": 87928,
+        "sha256": "3a189573c0ab36b7e77b67a1a5b2a849133969c472067e16fae3f5c10ffcd4ef",
+        "records": 128,
+        "selectedRecords": 1,
+        "expectedValues": [
+          "USD 19.73"
+        ],
+        "expectedValuesSha256": "1d9de16485106043e4e990da564f139afb924c42e84ee3a52bf71f073e6270b0"
+      },
+      {
+        "id": "hardCatalog",
+        "path": "hardCatalog.html",
+        "bytes": 17186672,
+        "sha256": "139ee57c396ae07c3910295e705fcacb79b08b6a8faf74813e443e494bb6a163",
+        "records": 25000,
+        "selectedRecords": 64,
+        "expectedValues": [
+          "USD 83.12",
+          "USD 66.43",
+          "USD 31.93",
+          "USD 63.18",
+          "USD 67.51",
+          "USD 48.60",
+          "USD 51.92",
+          "USD 54.24",
+          "USD 89.76",
+          "USD 83.12",
+          "USD 87.53",
+          "USD 76.43",
+          "USD 78.61",
+          "USD 83.17",
+          "USD 88.60",
+          "USD 45.34",
+          "USD 34.28",
+          "USD 35.38",
+          "USD 52.01",
+          "USD 58.69",
+          "USD 29.74",
+          "USD 68.62",
+          "USD 60.86",
+          "USD 90.81",
+          "USD 41.90",
+          "USD 43.17",
+          "USD 45.30",
+          "USD 53.13",
+          "USD 64.23",
+          "USD 73.12",
+          "USD 14.24",
+          "USD 26.48",
+          "USD 17.54",
+          "USD 72.07",
+          "USD 24.25",
+          "USD 35.30",
+          "USD 35.31",
+          "USD 84.24",
+          "USD 16.46",
+          "USD 62.06",
+          "USD 16.43",
+          "USD 37.55",
+          "USD 40.80",
+          "USD 44.21",
+          "USD 54.26",
+          "USD 74.22",
+          "USD 90.86",
+          "USD 18.63",
+          "USD 44.22",
+          "USD 44.23",
+          "USD 46.44",
+          "USD 83.12",
+          "USD 83.16",
+          "USD 17.55",
+          "USD 22.06",
+          "USD 46.48",
+          "USD 48.67",
+          "USD 54.20",
+          "USD 76.44",
+          "USD 83.19",
+          "USD 45.36",
+          "USD 62.07",
+          "USD 61.90",
+          "USD 30.88"
+        ],
+        "expectedValuesSha256": "fb600d69efd52bceb026fd8b949310e1da59d03e5874d662a2d91f8143b51d5e"
+      }
+    ]
+  },
+  "configuration": {
+    "campaigns": 5,
+    "cavemanSamples": 100,
+    "hardSamples": 30,
+    "cavemanOperations": 10,
+    "hardOperations": 1
+  },
+  "identities": {
+    "beautifulSoupHtmlParser": {
+      "armId": "beautifulSoupHtmlParser",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "4.15.0"
+    },
+    "beautifulSoupLxml": {
+      "armId": "beautifulSoupLxml",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "4.15.0"
+    },
+    "lxml": {
+      "armId": "lxml",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "6.1.3"
+    },
+    "parsel": {
+      "armId": "parsel",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "1.12.0"
+    },
+    "scraplingParser": {
+      "armId": "scraplingParser",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "0.4.15"
+    },
+    "selectolaxLexbor": {
+      "armId": "selectolaxLexbor",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "0.4.12"
+    },
+    "yosoiRust": {
+      "armId": "yosoiRust",
+      "language": "rust",
+      "runtime": "rust-1.98.0",
+      "productVersion": "0.1.0",
+      "sourceRevision": "d9b64106568b02e4960988ac5f18887301c576c4"
+    },
+    "rustScraper": {
+      "armId": "rustScraper",
+      "language": "rust",
+      "runtime": "rust-1.98.0",
+      "productVersion": "0.27.0"
+    },
+    "goquery": {
+      "armId": "goquery",
+      "language": "go",
+      "runtime": "go1.27.1",
+      "productVersion": "1.12.0"
+    }
+  },
+  "summaries": [
+    {
+      "armId": "beautifulSoupHtmlParser",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 19043780.5,
+      "campaignMedianMinimumNs": 18915679.0,
+      "campaignMedianMaximumNs": 19240557.0,
+      "p95AllSamplesNs": 23364523.0,
+      "meanAllSamplesNs": 20576916.402,
+      "throughputInputBytesPerSecond": 4617150.465476117
+    },
+    {
+      "armId": "beautifulSoupHtmlParser",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 1911390.5,
+      "campaignMedianMinimumNs": 1882237.0,
+      "campaignMedianMaximumNs": 1939202.5,
+      "p95AllSamplesNs": 1959924.0,
+      "meanAllSamplesNs": 1921905.7,
+      "throughputInputBytesPerSecond": 46002112.07495277
+    },
+    {
+      "armId": "beautifulSoupHtmlParser",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 16809753.0,
+      "campaignMedianMinimumNs": 16672646.0,
+      "campaignMedianMaximumNs": 17127686.0,
+      "p95AllSamplesNs": 20882176.0,
+      "meanAllSamplesNs": 18287262.592,
+      "throughputInputBytesPerSecond": 5230772.873343231
+    },
+    {
+      "armId": "beautifulSoupLxml",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 13703446.5,
+      "campaignMedianMinimumNs": 13667186.5,
+      "campaignMedianMaximumNs": 13724435.5,
+      "p95AllSamplesNs": 17362067.0,
+      "meanAllSamplesNs": 14848851.772,
+      "throughputInputBytesPerSecond": 6416487.998110548
+    },
+    {
+      "armId": "beautifulSoupLxml",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 1894592.0,
+      "campaignMedianMinimumNs": 1882644.5,
+      "campaignMedianMaximumNs": 1931031.0,
+      "p95AllSamplesNs": 1961982.0,
+      "meanAllSamplesNs": 1915592.266,
+      "throughputInputBytesPerSecond": 46409992.23051718
+    },
+    {
+      "armId": "beautifulSoupLxml",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 11524768.5,
+      "campaignMedianMinimumNs": 11372521.0,
+      "campaignMedianMaximumNs": 12987027.0,
+      "p95AllSamplesNs": 15635547.0,
+      "meanAllSamplesNs": 12877309.588,
+      "throughputInputBytesPerSecond": 7629480.800416946
+    },
+    {
+      "armId": "goquery",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 976167.0,
+      "campaignMedianMinimumNs": 751678.0,
+      "campaignMedianMaximumNs": 991653.5,
+      "p95AllSamplesNs": 1083600.0,
+      "meanAllSamplesNs": 909934.504,
+      "throughputInputBytesPerSecond": 90074751.55378127
+    },
+    {
+      "armId": "goquery",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 69471.0,
+      "campaignMedianMinimumNs": 46831.5,
+      "campaignMedianMaximumNs": 70384.5,
+      "p95AllSamplesNs": 73405.0,
+      "meanAllSamplesNs": 65177.812,
+      "throughputInputBytesPerSecond": 1265679204.2722862
+    },
+    {
+      "armId": "goquery",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 932986.5,
+      "campaignMedianMinimumNs": 850636.5,
+      "campaignMedianMaximumNs": 981528.5,
+      "p95AllSamplesNs": 1252343.0,
+      "meanAllSamplesNs": 968691.016,
+      "throughputInputBytesPerSecond": 94243593.02090652
+    },
+    {
+      "armId": "lxml",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 680987.0,
+      "campaignMedianMinimumNs": 675953.5,
+      "campaignMedianMaximumNs": 689501.0,
+      "p95AllSamplesNs": 715220.0,
+      "meanAllSamplesNs": 691695.074,
+      "throughputInputBytesPerSecond": 129118470.69033624
+    },
+    {
+      "armId": "lxml",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 74003.0,
+      "campaignMedianMinimumNs": 73541.0,
+      "campaignMedianMaximumNs": 74880.5,
+      "p95AllSamplesNs": 76662.0,
+      "meanAllSamplesNs": 74636.05,
+      "throughputInputBytesPerSecond": 1188168047.241328
+    },
+    {
+      "armId": "lxml",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 598618.0,
+      "campaignMedianMinimumNs": 595319.5,
+      "campaignMedianMaximumNs": 604580.5,
+      "p95AllSamplesNs": 645861.0,
+      "meanAllSamplesNs": 614444.068,
+      "throughputInputBytesPerSecond": 146884991.7643639
+    },
+    {
+      "armId": "parsel",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 608379.5,
+      "campaignMedianMinimumNs": 599657.5,
+      "campaignMedianMaximumNs": 613441.5,
+      "p95AllSamplesNs": 655199.0,
+      "meanAllSamplesNs": 613019.298,
+      "throughputInputBytesPerSecond": 144528209.77695665
+    },
+    {
+      "armId": "parsel",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 67287.5,
+      "campaignMedianMinimumNs": 65114.0,
+      "campaignMedianMaximumNs": 68817.0,
+      "p95AllSamplesNs": 71859.0,
+      "meanAllSamplesNs": 68050.644,
+      "throughputInputBytesPerSecond": 1306750882.4075794
+    },
+    {
+      "armId": "parsel",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 507493.0,
+      "campaignMedianMinimumNs": 501154.5,
+      "campaignMedianMaximumNs": 512398.0,
+      "p95AllSamplesNs": 523478.0,
+      "meanAllSamplesNs": 509506.582,
+      "throughputInputBytesPerSecond": 173259532.6438
+    },
+    {
+      "armId": "rustScraper",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 829051.0,
+      "campaignMedianMinimumNs": 825337.5,
+      "campaignMedianMaximumNs": 830947.5,
+      "p95AllSamplesNs": 861996.0,
+      "meanAllSamplesNs": 840579.786,
+      "throughputInputBytesPerSecond": 106058614.00565225
+    },
+    {
+      "armId": "rustScraper",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 24519.5,
+      "campaignMedianMinimumNs": 24028.0,
+      "campaignMedianMaximumNs": 53161.0,
+      "p95AllSamplesNs": 54210.0,
+      "meanAllSamplesNs": 30794.786,
+      "throughputInputBytesPerSecond": 3586043761.0881133
+    },
+    {
+      "armId": "rustScraper",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 785474.0,
+      "campaignMedianMinimumNs": 784929.0,
+      "campaignMedianMaximumNs": 791074.5,
+      "p95AllSamplesNs": 841512.0,
+      "meanAllSamplesNs": 807766.362,
+      "throughputInputBytesPerSecond": 111942597.71806578
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 679092.5,
+      "campaignMedianMinimumNs": 672576.5,
+      "campaignMedianMaximumNs": 685693.5,
+      "p95AllSamplesNs": 712104.0,
+      "meanAllSamplesNs": 686772.632,
+      "throughputInputBytesPerSecond": 129478679.26681563
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 69310.0,
+      "campaignMedianMinimumNs": 68375.0,
+      "campaignMedianMaximumNs": 72312.0,
+      "p95AllSamplesNs": 79512.0,
+      "meanAllSamplesNs": 71861.052,
+      "throughputInputBytesPerSecond": 1268619246.8619246
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 601125.0,
+      "campaignMedianMinimumNs": 599088.0,
+      "campaignMedianMaximumNs": 614135.5,
+      "p95AllSamplesNs": 641494.0,
+      "meanAllSamplesNs": 610753.214,
+      "throughputInputBytesPerSecond": 146272405.9055937
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 786159.5,
+      "campaignMedianMinimumNs": 781807.0,
+      "campaignMedianMaximumNs": 794217.0,
+      "p95AllSamplesNs": 820851.0,
+      "meanAllSamplesNs": 793429.956,
+      "throughputInputBytesPerSecond": 111844988.19895963
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 48820.0,
+      "campaignMedianMinimumNs": 48591.0,
+      "campaignMedianMaximumNs": 50547.5,
+      "p95AllSamplesNs": 51624.0,
+      "meanAllSamplesNs": 50011.338,
+      "throughputInputBytesPerSecond": 1801065137.2388368
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 796462.0,
+      "campaignMedianMinimumNs": 787946.0,
+      "campaignMedianMaximumNs": 807965.5,
+      "p95AllSamplesNs": 899122.0,
+      "meanAllSamplesNs": 819515.184,
+      "throughputInputBytesPerSecond": 110398236.19959271
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "caveman",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 1205366.5,
+      "campaignMedianMinimumNs": 1188759.5,
+      "campaignMedianMaximumNs": 1205573.5,
+      "p95AllSamplesNs": 1285580.0,
+      "meanAllSamplesNs": 1220327.606,
+      "throughputInputBytesPerSecond": 72947107.78837806
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "caveman",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 103666.0,
+      "campaignMedianMinimumNs": 102362.5,
+      "campaignMedianMaximumNs": 104835.5,
+      "p95AllSamplesNs": 225600.0,
+      "meanAllSamplesNs": 118280.024,
+      "throughputInputBytesPerSecond": 848185518.8779348
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "caveman",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 1085425.5,
+      "campaignMedianMinimumNs": 1073987.0,
+      "campaignMedianMaximumNs": 1090313.0,
+      "p95AllSamplesNs": 1137035.0,
+      "meanAllSamplesNs": 1108752.52,
+      "throughputInputBytesPerSecond": 81007862.81508957
+    }
+  ],
+  "cold": [
+    {
+      "recordType": "cold",
+      "armId": "beautifulSoupHtmlParser",
+      "task": "caveman",
+      "samplesNs": [
+        82820975,
+        91914755,
+        120418822,
+        91636936,
+        79501447
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "beautifulSoupLxml",
+      "task": "caveman",
+      "samplesNs": [
+        77487274,
+        130405475,
+        81757643,
+        80299265,
+        76688896
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "lxml",
+      "task": "caveman",
+      "samplesNs": [
+        85851193,
+        49384555,
+        50355053,
+        78007484,
+        49424239
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "parsel",
+      "task": "caveman",
+      "samplesNs": [
+        62021679,
+        66178255,
+        87354514,
+        61045489,
+        69156857
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "scraplingParser",
+      "task": "caveman",
+      "samplesNs": [
+        69879775,
+        78533002,
+        63400678,
+        62033721,
+        87335548
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "selectolaxLexbor",
+      "task": "caveman",
+      "samplesNs": [
+        48295354,
+        44205502,
+        61179168,
+        53235172,
+        52523154
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "yosoiRust",
+      "task": "caveman",
+      "samplesNs": [
+        4741608,
+        5471929,
+        4945868,
+        4551302,
+        4228371
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "rustScraper",
+      "task": "caveman",
+      "samplesNs": [
+        3354512,
+        3202289,
+        3115056,
+        3180398,
+        3218208
+      ]
+    },
+    {
+      "recordType": "cold",
+      "armId": "goquery",
+      "task": "caveman",
+      "samplesNs": [
+        4332445,
+        4641711,
+        4549369,
+        4109159,
+        4067641
+      ]
+    }
+  ],
+  "resources": [],
+  "packages": {
+    "beautifulSoupHtmlParser": {
+      "version": "4.15.0",
+      "directInstalledBytes": 406683,
+      "installedPackageBytes": 737311,
+      "distributions": [
+        "beautifulsoup4==4.15.0",
+        "soupsieve==2.10",
+        "typing_extensions==4.16.0"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "beautifulSoupLxml": {
+      "version": "4.15.0",
+      "directInstalledBytes": 406683,
+      "installedPackageBytes": 12438154,
+      "distributions": [
+        "beautifulsoup4==4.15.0",
+        "lxml==6.1.3",
+        "soupsieve==2.10",
+        "typing_extensions==4.16.0"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "lxml": {
+      "version": "6.1.3",
+      "directInstalledBytes": 11700843,
+      "installedPackageBytes": 11700843,
+      "distributions": [
+        "lxml==6.1.3"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "parsel": {
+      "version": "1.12.0",
+      "directInstalledBytes": 47264,
+      "installedPackageBytes": 11955248,
+      "distributions": [
+        "cssselect==1.5.0",
+        "jmespath==1.1.0",
+        "lxml==6.1.3",
+        "parsel==1.12.0",
+        "w3lib==2.4.1"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "scraplingParser": {
+      "version": "0.4.15",
+      "directInstalledBytes": 689093,
+      "installedPackageBytes": 14074341,
+      "distributions": [
+        "cssselect==1.5.0",
+        "lxml==6.1.3",
+        "orjson==3.12.0",
+        "scrapling==0.4.15",
+        "tld==0.13.2",
+        "typing_extensions==4.16.0",
+        "w3lib==2.4.1"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "selectolaxLexbor": {
+      "version": "0.4.12",
+      "directInstalledBytes": 14459733,
+      "installedPackageBytes": 14459733,
+      "distributions": [
+        "selectolax==0.4.12"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "yosoiRust": {
+      "directInstalledBytes": 5081608,
+      "installedPackageBytes": 5081608,
+      "runnableEnvironmentBytes": 5081608,
+      "artifactBytes": 5081608,
+      "streamingMode": "fullBuffer"
+    },
+    "rustScraper": {
+      "directInstalledBytes": 2748072,
+      "installedPackageBytes": 2748072,
+      "runnableEnvironmentBytes": 2748072,
+      "artifactBytes": 2748072,
+      "streamingMode": "fullBuffer"
+    },
+    "goquery": {
+      "directInstalledBytes": 5128455,
+      "installedPackageBytes": 5128455,
+      "runnableEnvironmentBytes": 5128455,
+      "artifactBytes": 5128455,
+      "streamingMode": "fullBuffer"
+    }
+  }
+}

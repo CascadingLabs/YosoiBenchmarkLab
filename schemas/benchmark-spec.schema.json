@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yosoi.dev/benchmarks/schemas/benchmark-spec.v1.json",
+  "title": "Yosoi Benchmark Specification",
+  "type": "object",
+  "required": ["schemaVersion", "id", "status", "quadrant", "network", "correctnessGate", "phases", "sampling", "metrics", "workloads"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schemaVersion": {"const": "yosoi.benchmark.spec.v1"},
+    "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "status": {"enum": ["draftForAdapterReview", "frozen", "retired"]},
+    "quadrant": {"enum": ["parserSelector", "httpFramework", "renderedBrowserRequest"]},
+    "network": {"enum": ["forbidden", "loopbackOnly", "declaredLive"]},
+    "publicYosoiSurface": {"enum": ["rust", "python", "node"]},
+    "correctnessGate": {"type": "object"},
+    "neutralLocatorVocabulary": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "input", "output"],
+        "properties": {
+          "id": {"type": "string"},
+          "input": {"type": "string"},
+          "output": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "sampling": {"type": "object"},
+    "metrics": {"type": "object"},
+    "workloads": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "class"],
+        "properties": {
+          "id": {"type": "string"},
+          "class": {"type": "string"},
+          "generator": {"type": "object"},
+          "locator": {"type": "object"},
+          "expectedValues": {},
+          "heroPhase": {"type": "string"},
+          "rankedPhases": {"type": "array", "items": {"type": "string"}},
+          "publisher": {"type": "string"},
+          "nestedElements": {"type": "integer", "minimum": 1},
+          "resultPopulation": {"type": "string"},
+          "features": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

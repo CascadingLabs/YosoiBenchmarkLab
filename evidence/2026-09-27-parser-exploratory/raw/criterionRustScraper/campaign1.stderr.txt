@@ -1,0 +1,14 @@
+    Finished `bench` profile [optimized] target(s) in 0.04s
+     Running benches/caveman.rs (/tmp/yosoi-benchmark-work/rust-scraper-target/release/deps/caveman-dce9922b7d589451)
+Benchmarking rustScraper/parse
+Benchmarking rustScraper/parse: Warming up for 3.0000 s
+Benchmarking rustScraper/parse: Collecting 100 samples in estimated 7.9160 s (10k iterations)
+Benchmarking rustScraper/parse: Analyzing
+Benchmarking rustScraper/locate
+Benchmarking rustScraper/locate: Warming up for 3.0000 s
+Benchmarking rustScraper/locate: Collecting 100 samples in estimated 5.0625 s (202k iterations)
+Benchmarking rustScraper/locate: Analyzing
+Benchmarking rustScraper/endToEnd
+Benchmarking rustScraper/endToEnd: Warming up for 3.0000 s
+Benchmarking rustScraper/endToEnd: Collecting 100 samples in estimated 8.4178 s (10k iterations)
+Benchmarking rustScraper/endToEnd: Analyzing

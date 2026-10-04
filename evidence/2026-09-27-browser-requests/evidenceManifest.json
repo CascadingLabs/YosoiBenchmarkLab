@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "yosoi.benchmark.evidence-manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2391,
+      "sha256": "88346b3760c1a85693912251089b1f1163da61f543e4d60f88aa34ae16edc555"
+    },
+    {
+      "path": "raw/browser-results.jsonl",
+      "bytes": 22186,
+      "sha256": "28500609b1a7c5636f0dcf00a1fa3b94a63f8515d2de714cec3e47bc7a180b92"
+    },
+    {
+      "path": "raw/summary.json",
+      "bytes": 3868,
+      "sha256": "343a725d12d6c4bf655f245f6cb4c14ecbdfc65dad3b8b5077ac435595678624"
+    }
+  ]
+}

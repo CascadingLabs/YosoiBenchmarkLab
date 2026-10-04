@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "yosoi.benchmark.baseline.v1",
+  "title": "Yosoi Benchmark Lab exploratory Baseline v1",
+  "capturedOn": "2026-09-27",
+  "status": "exploratoryBaseline",
+  "claimBoundary": {
+    "allowed": "A current-host optimization baseline for parser, HTTP, and rendered acquisition work.",
+    "disallowed": "A public fastest claim, release certification, or a comparison against hosted APIs."
+  },
+  "quadrants": [
+    {
+      "id": "parserSelector",
+      "evidenceDirectory": "evidence/2026-09-27-parser-exploratory",
+      "evidenceManifestSha256": "1f44da2138ca721e1ca12cd733eb77597ae82be5c9cfcf644a35ff56c765d6c3",
+      "labRevision": "c2b5342e59e0",
+      "yosoiSourceRevision": "d9b64106568b02e4960988ac5f18887301c576c4",
+      "yosoiArtifactSha256": "573cadfe50b563e84422c9541b6726037539862f9a54fe8aefe332b27a94e122"
+    },
+    {
+      "id": "httpAcquisition",
+      "evidenceDirectory": "evidence/2026-09-27-http-e2e",
+      "evidenceManifestSha256": "71937c5fe74ffa90dea4784f06a7590f2924d87dd1a4a6b464c6adbb573b1630",
+      "labRevision": "96d14d571165",
+      "yosoiSourceRevision": null,
+      "yosoiArtifactSha256": "d6c3d547566c556717dac461f9189775ff1a13de18caa1f7e242838ef4358d6c",
+      "yosoiArtifactBytes": 11296464,
+      "sourceRevisionWasRetained": false
+    },
+    {
+      "id": "renderedAcquisition",
+      "evidenceDirectory": "evidence/2026-09-27-browser-requests",
+      "evidenceManifestSha256": "d0af84b6cc63317223128ca47ec8cb9f5b5bb481943a17d1a5e8b1f844086e23",
+      "labRevision": "7a19d5678f80",
+      "yosoiSourceRevision": null,
+      "yosoiArtifactSha256": "d88c7d01a978696a4b44264c36486d34545a5a540dfaad997969e62ef533acf4",
+      "yosoiArtifactBytes": 21925576,
+      "sourceRevisionWasRetained": false
+    }
+  ],
+  "preservedEnvironment": {
+    "operatingSystem": "Linux 7.2.5-3-omarchy x86_64",
+    "processor": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M",
+    "logicalCpus": 24,
+    "python": "3.13.1",
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "go": "1.27.1",
+    "rustc": "1.98.0",
+    "cargo": "1.98.0",
+    "chromium": {
+      "distribution": "Arch Linux regular Chromium",
+      "version": "152.0.7977.82",
+      "executable": "/usr/bin/chromium",
+      "sha256": "78f94ee05d5d6fd1bd8239b9700d3cf54d540911febad4c7cea01080273943f9"
+    },
+    "httpPythonDirectVersions": {
+      "scrapling": "0.4.15",
+      "scrapy": "2.19.0"
+    },
+    "browserPythonDirectVersions": {
+      "scrapling": "0.4.15",
+      "playwright": "1.63.0"
+    },
+    "nodeCrawlee": "3.15.3",
+    "nodePlaywright": "1.57.0",
+    "colly": "2.3.0"
+  },
+  "knownLimitations": [
+    "Baseline v1 measures narrow HTML and CSS-shaped extraction tasks; it does not independently benchmark XPath, decoded-text literal or regex extraction, JSON, XML, accessibility trees, streaming evaluation, or typed Contracts/Extractor paths.",
+    "The HTTP and rendered Yosoi source revisions were not retained at run time; only the preserved binary hashes and sizes identify those arms.",
+    "The Yosoi binaries were local source builds, not published release artifacts.",
+    "uv.lock defines future reruns; the original HTTP and rendered runs retained direct versions but not a complete Python transitive freeze at capture time.",
+    "Rendered acquisition used the documented emergency rollback Chromium 152 artifact, not the certified Chrome 153 tuple.",
+    "All performance and RSS observations come from one workstation and are exploratory.",
+    "The direct Playwright control starts its internal timer after browser launch and is a pooled lower-level control, not a product-equivalent arm."
+  ]
+}

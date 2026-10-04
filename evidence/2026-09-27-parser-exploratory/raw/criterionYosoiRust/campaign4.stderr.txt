@@ -1,0 +1,18 @@
+    Finished `bench` profile [optimized] target(s) in 0.07s
+     Running benches/caveman.rs (target/release/deps/caveman-e5d5df05f1dd7be7)
+Benchmarking yosoiRust/parse
+Benchmarking yosoiRust/parse: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 5.6s, enable flat sampling, or reduce sample count to 60.
+Benchmarking yosoiRust/parse: Collecting 100 samples in estimated 5.6098 s (5050 iterations)
+Benchmarking yosoiRust/parse: Analyzing
+Benchmarking yosoiRust/locate
+Benchmarking yosoiRust/locate: Warming up for 3.0000 s
+Benchmarking yosoiRust/locate: Collecting 100 samples in estimated 5.1982 s (50k iterations)
+Benchmarking yosoiRust/locate: Analyzing
+Benchmarking yosoiRust/endToEnd
+Benchmarking yosoiRust/endToEnd: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 6.0s, enable flat sampling, or reduce sample count to 60.
+Benchmarking yosoiRust/endToEnd: Collecting 100 samples in estimated 6.0023 s (5050 iterations)
+Benchmarking yosoiRust/endToEnd: Analyzing

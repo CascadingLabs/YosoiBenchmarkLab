@@ -1,0 +1,9 @@
+{
+  "name": "yosoi-benchmark-browser-crawlee",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "crawlee": "3.15.3",
+    "playwright": "1.57.0"
+  }
+}

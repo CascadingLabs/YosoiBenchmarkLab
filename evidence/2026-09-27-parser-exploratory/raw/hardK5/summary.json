@@ -1,0 +1,481 @@
+{
+  "schemaVersion": "yosoi.benchmark.exploratory-results.v1",
+  "fixtureManifest": {
+    "schemaVersion": "yosoi.benchmark.fixtures.v1",
+    "seed": "0x594f534f49",
+    "fixtures": [
+      {
+        "id": "cavemanCatalog",
+        "path": "cavemanCatalog.html",
+        "bytes": 87928,
+        "sha256": "3a189573c0ab36b7e77b67a1a5b2a849133969c472067e16fae3f5c10ffcd4ef",
+        "records": 128,
+        "selectedRecords": 1,
+        "expectedValues": [
+          "USD 19.73"
+        ],
+        "expectedValuesSha256": "1d9de16485106043e4e990da564f139afb924c42e84ee3a52bf71f073e6270b0"
+      },
+      {
+        "id": "hardCatalog",
+        "path": "hardCatalog.html",
+        "bytes": 17186672,
+        "sha256": "139ee57c396ae07c3910295e705fcacb79b08b6a8faf74813e443e494bb6a163",
+        "records": 25000,
+        "selectedRecords": 64,
+        "expectedValues": [
+          "USD 83.12",
+          "USD 66.43",
+          "USD 31.93",
+          "USD 63.18",
+          "USD 67.51",
+          "USD 48.60",
+          "USD 51.92",
+          "USD 54.24",
+          "USD 89.76",
+          "USD 83.12",
+          "USD 87.53",
+          "USD 76.43",
+          "USD 78.61",
+          "USD 83.17",
+          "USD 88.60",
+          "USD 45.34",
+          "USD 34.28",
+          "USD 35.38",
+          "USD 52.01",
+          "USD 58.69",
+          "USD 29.74",
+          "USD 68.62",
+          "USD 60.86",
+          "USD 90.81",
+          "USD 41.90",
+          "USD 43.17",
+          "USD 45.30",
+          "USD 53.13",
+          "USD 64.23",
+          "USD 73.12",
+          "USD 14.24",
+          "USD 26.48",
+          "USD 17.54",
+          "USD 72.07",
+          "USD 24.25",
+          "USD 35.30",
+          "USD 35.31",
+          "USD 84.24",
+          "USD 16.46",
+          "USD 62.06",
+          "USD 16.43",
+          "USD 37.55",
+          "USD 40.80",
+          "USD 44.21",
+          "USD 54.26",
+          "USD 74.22",
+          "USD 90.86",
+          "USD 18.63",
+          "USD 44.22",
+          "USD 44.23",
+          "USD 46.44",
+          "USD 83.12",
+          "USD 83.16",
+          "USD 17.55",
+          "USD 22.06",
+          "USD 46.48",
+          "USD 48.67",
+          "USD 54.20",
+          "USD 76.44",
+          "USD 83.19",
+          "USD 45.36",
+          "USD 62.07",
+          "USD 61.90",
+          "USD 30.88"
+        ],
+        "expectedValuesSha256": "fb600d69efd52bceb026fd8b949310e1da59d03e5874d662a2d91f8143b51d5e"
+      }
+    ]
+  },
+  "configuration": {
+    "campaigns": 5,
+    "cavemanSamples": 100,
+    "hardSamples": 5,
+    "cavemanOperations": 10,
+    "hardOperations": 1
+  },
+  "identities": {
+    "lxml": {
+      "armId": "lxml",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "6.1.3"
+    },
+    "parsel": {
+      "armId": "parsel",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "1.12.0"
+    },
+    "scraplingParser": {
+      "armId": "scraplingParser",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "0.4.15"
+    },
+    "selectolaxLexbor": {
+      "armId": "selectolaxLexbor",
+      "language": "python",
+      "runtime": "python-3.13.1",
+      "productVersion": "0.4.12"
+    },
+    "yosoiRust": {
+      "armId": "yosoiRust",
+      "language": "rust",
+      "runtime": "rust-1.98.0",
+      "productVersion": "0.1.0",
+      "sourceRevision": "d9b64106568b02e4960988ac5f18887301c576c4"
+    },
+    "rustScraper": {
+      "armId": "rustScraper",
+      "language": "rust",
+      "runtime": "rust-1.98.0",
+      "productVersion": "0.27.0"
+    },
+    "goquery": {
+      "armId": "goquery",
+      "language": "go",
+      "runtime": "go1.27.1",
+      "productVersion": "1.12.0"
+    }
+  },
+  "summaries": [
+    {
+      "armId": "goquery",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 177206503,
+      "campaignMedianMinimumNs": 143396519,
+      "campaignMedianMaximumNs": 189958222,
+      "p95AllSamplesNs": 200913899.0,
+      "meanAllSamplesNs": 175919642.6,
+      "throughputInputBytesPerSecond": 96986689.02686942
+    },
+    {
+      "armId": "goquery",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 15522764,
+      "campaignMedianMinimumNs": 11011551,
+      "campaignMedianMaximumNs": 17305046,
+      "p95AllSamplesNs": 17531539.0,
+      "meanAllSamplesNs": 15073377.96,
+      "throughputInputBytesPerSecond": 1107191476.9818056
+    },
+    {
+      "armId": "goquery",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 163642966,
+      "campaignMedianMinimumNs": 160123789,
+      "campaignMedianMaximumNs": 176653057,
+      "p95AllSamplesNs": 228624521.0,
+      "meanAllSamplesNs": 174661501.24,
+      "throughputInputBytesPerSecond": 105025424.67972623
+    },
+    {
+      "armId": "lxml",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 171700135,
+      "campaignMedianMinimumNs": 165857392,
+      "campaignMedianMaximumNs": 176744289,
+      "p95AllSamplesNs": 208054560.0,
+      "meanAllSamplesNs": 178003182.12,
+      "throughputInputBytesPerSecond": 100097020.8905194
+    },
+    {
+      "armId": "lxml",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 59151199,
+      "campaignMedianMinimumNs": 57527375,
+      "campaignMedianMaximumNs": 60774705,
+      "p95AllSamplesNs": 62140340.0,
+      "meanAllSamplesNs": 59370676.92,
+      "throughputInputBytesPerSecond": 290554921.8030221
+    },
+    {
+      "armId": "lxml",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 114241764,
+      "campaignMedianMinimumNs": 109201656,
+      "campaignMedianMaximumNs": 115259792,
+      "p95AllSamplesNs": 147826643.0,
+      "meanAllSamplesNs": 120476846.96,
+      "throughputInputBytesPerSecond": 150441234.43331987
+    },
+    {
+      "armId": "parsel",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 143600357,
+      "campaignMedianMinimumNs": 140156585,
+      "campaignMedianMaximumNs": 149079354,
+      "p95AllSamplesNs": 183702624.0,
+      "meanAllSamplesNs": 151765186.24,
+      "throughputInputBytesPerSecond": 119684047.8606888
+    },
+    {
+      "armId": "parsel",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 34253272,
+      "campaignMedianMinimumNs": 33574390,
+      "campaignMedianMaximumNs": 35342638,
+      "p95AllSamplesNs": 36600973.0,
+      "meanAllSamplesNs": 34694948.08,
+      "throughputInputBytesPerSecond": 501752708.471179
+    },
+    {
+      "armId": "parsel",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 114508047,
+      "campaignMedianMinimumNs": 112722383,
+      "campaignMedianMaximumNs": 128801671,
+      "p95AllSamplesNs": 153276416.0,
+      "meanAllSamplesNs": 124539157.8,
+      "throughputInputBytesPerSecond": 150091390.52035356
+    },
+    {
+      "armId": "rustScraper",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 187597367,
+      "campaignMedianMinimumNs": 184674909,
+      "campaignMedianMaximumNs": 190095008,
+      "p95AllSamplesNs": 192730381.0,
+      "meanAllSamplesNs": 188175092.0,
+      "throughputInputBytesPerSecond": 91614676.02047954
+    },
+    {
+      "armId": "rustScraper",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 5358776,
+      "campaignMedianMinimumNs": 5040753,
+      "campaignMedianMaximumNs": 6201417,
+      "p95AllSamplesNs": 6498861.0,
+      "meanAllSamplesNs": 5617428.12,
+      "throughputInputBytesPerSecond": 3207201047.4033623
+    },
+    {
+      "armId": "rustScraper",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 179890449,
+      "campaignMedianMinimumNs": 177724537,
+      "campaignMedianMaximumNs": 182338858,
+      "p95AllSamplesNs": 185218680.0,
+      "meanAllSamplesNs": 180687058.28,
+      "throughputInputBytesPerSecond": 95539658.13938238
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 149643320,
+      "campaignMedianMinimumNs": 139118143,
+      "campaignMedianMaximumNs": 150250325,
+      "p95AllSamplesNs": 183101385.0,
+      "meanAllSamplesNs": 153089195.36,
+      "throughputInputBytesPerSecond": 114850913.49216257
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 34271683,
+      "campaignMedianMinimumNs": 33476154,
+      "campaignMedianMaximumNs": 34645792,
+      "p95AllSamplesNs": 34851184.0,
+      "meanAllSamplesNs": 34076854.48,
+      "throughputInputBytesPerSecond": 501483163.2283714
+    },
+    {
+      "armId": "scraplingParser",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 113040407,
+      "campaignMedianMinimumNs": 111188132,
+      "campaignMedianMaximumNs": 115573218,
+      "p95AllSamplesNs": 149541014.0,
+      "meanAllSamplesNs": 119811669.76,
+      "throughputInputBytesPerSecond": 152040075.36880153
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 151162744,
+      "campaignMedianMinimumNs": 150943121,
+      "campaignMedianMaximumNs": 155129885,
+      "p95AllSamplesNs": 185641319.0,
+      "meanAllSamplesNs": 158396415.36,
+      "throughputInputBytesPerSecond": 113696480.66192819
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 17090086,
+      "campaignMedianMinimumNs": 16579178,
+      "campaignMedianMaximumNs": 18139544,
+      "p95AllSamplesNs": 19195063.0,
+      "meanAllSamplesNs": 17409710.16,
+      "throughputInputBytesPerSecond": 1005651580.6883593
+    },
+    {
+      "armId": "selectolaxLexbor",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 136718114,
+      "campaignMedianMinimumNs": 135618263,
+      "campaignMedianMaximumNs": 138413287,
+      "p95AllSamplesNs": 166840936.0,
+      "meanAllSamplesNs": 143095884.36,
+      "throughputInputBytesPerSecond": 125708814.26875155
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "hard",
+      "phase": "endToEnd",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 315983994,
+      "campaignMedianMinimumNs": 315222622,
+      "campaignMedianMaximumNs": 318082876,
+      "p95AllSamplesNs": 347270108.0,
+      "meanAllSamplesNs": 319235821.04,
+      "throughputInputBytesPerSecond": 54390957.53691879
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "hard",
+      "phase": "locate",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 31867027,
+      "campaignMedianMinimumNs": 31493649,
+      "campaignMedianMaximumNs": 33639361,
+      "p95AllSamplesNs": 33941224.0,
+      "meanAllSamplesNs": 32025348.76,
+      "throughputInputBytesPerSecond": 539324612.8670868
+    },
+    {
+      "armId": "yosoiRust",
+      "task": "hard",
+      "phase": "parse",
+      "campaigns": 5,
+      "medianOfCampaignMediansNs": 283949706,
+      "campaignMedianMinimumNs": 280481960,
+      "campaignMedianMaximumNs": 285573560,
+      "p95AllSamplesNs": 291804713.0,
+      "meanAllSamplesNs": 283486649.6,
+      "throughputInputBytesPerSecond": 60527169.554456234
+    }
+  ],
+  "cold": [],
+  "resources": [],
+  "packages": {
+    "lxml": {
+      "version": "6.1.3",
+      "directInstalledBytes": 11700843,
+      "installedPackageBytes": 11700843,
+      "distributions": [
+        "lxml==6.1.3"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "parsel": {
+      "version": "1.12.0",
+      "directInstalledBytes": 47264,
+      "installedPackageBytes": 11955248,
+      "distributions": [
+        "cssselect==1.5.0",
+        "jmespath==1.1.0",
+        "lxml==6.1.3",
+        "parsel==1.12.0",
+        "w3lib==2.4.1"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "scraplingParser": {
+      "version": "0.4.15",
+      "directInstalledBytes": 689093,
+      "installedPackageBytes": 14074341,
+      "distributions": [
+        "cssselect==1.5.0",
+        "lxml==6.1.3",
+        "orjson==3.12.0",
+        "scrapling==0.4.15",
+        "tld==0.13.2",
+        "typing_extensions==4.16.0",
+        "w3lib==2.4.1"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "selectolaxLexbor": {
+      "version": "0.4.12",
+      "directInstalledBytes": 14459733,
+      "installedPackageBytes": 14459733,
+      "distributions": [
+        "selectolax==0.4.12"
+      ],
+      "runnableEnvironmentBytes": 161178495,
+      "artifactBytes": null,
+      "streamingMode": "fullBuffer"
+    },
+    "yosoiRust": {
+      "directInstalledBytes": 5081608,
+      "installedPackageBytes": 5081608,
+      "runnableEnvironmentBytes": 5081608,
+      "artifactBytes": 5081608,
+      "streamingMode": "fullBuffer"
+    },
+    "rustScraper": {
+      "directInstalledBytes": 2748072,
+      "installedPackageBytes": 2748072,
+      "runnableEnvironmentBytes": 2748072,
+      "artifactBytes": 2748072,
+      "streamingMode": "fullBuffer"
+    },
+    "goquery": {
+      "directInstalledBytes": 5128455,
+      "installedPackageBytes": 5128455,
+      "runnableEnvironmentBytes": 5128455,
+      "artifactBytes": 5128455,
+      "streamingMode": "fullBuffer"
+    }
+  }
+}
