@@ -16,6 +16,7 @@ def fetch(index: int, target: str, executable: str) -> tuple[int, str]:
         network_idle=False,
         disable_resources=False,
         timeout=45_000,
+        additional_args={"chromium_sandbox": True},
     )
     value = response.css("span.value::text").get()
     if value is None:

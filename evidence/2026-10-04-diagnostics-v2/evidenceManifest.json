@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "yosoi.benchmark.evidence-manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 7996,
+      "sha256": "4e4c60a4f62896730c9a6ddfbaa16cc0a37f59a877434ba756277de12792b63b"
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 980,
+      "sha256": "14b410f1328e8a449fdf7515f95b768336ac3cf9a7b7f7b32fa56995f438e82d"
+    },
+    {
+      "path": "raw/conformance-results.json",
+      "bytes": 12639,
+      "sha256": "1daee0a03450fecf7bc09c50353164563f3e331350b0b675c770d16a1e8f59b0"
+    },
+    {
+      "path": "raw/diagnostics-v2.json",
+      "bytes": 34688,
+      "sha256": "77f377083ab724634b182a74c2e47d7f0991f572f12080ff1aa77d6dac071bf5"
+    },
+    {
+      "path": "raw/environment.json",
+      "bytes": 12201,
+      "sha256": "d64b9e1a9bb1fadeb09a69840d0f58dcac28ae32da650976fad79f0d81dd9028"
+    },
+    {
+      "path": "raw/extraction-limit-results.json",
+      "bytes": 1318,
+      "sha256": "61f64fe486ca6f47a460a380ff25be5f5905c919a017458af7c0b1cf42368e9b"
+    },
+    {
+      "path": "raw/extraction-results.jsonl",
+      "bytes": 115070,
+      "sha256": "1e269721af4c4f2d6d7ab9acaef5a35b5a46852e0d37f362baaaeaa36c474dd2"
+    },
+    {
+      "path": "raw/extraction-summary.json",
+      "bytes": 14801,
+      "sha256": "c981fe606d0d886bd5a92a79ae386431c937964e0c60d5116c8a21507dbfed5e"
+    },
+    {
+      "path": "raw/fixtureManifest.json",
+      "bytes": 6356,
+      "sha256": "469d33e730743e732891d71902c9b9c62d0c9d939e62d7f14fe522ef6142c241"
+    },
+    {
+      "path": "raw/matrix-results.jsonl",
+      "bytes": 2421974,
+      "sha256": "14af61c2a7322d867c05fe41ac9837ffce1f1f16236066cdc22b5fc660aac8b4"
+    },
+    {
+      "path": "raw/matrix-summary.json",
+      "bytes": 327875,
+      "sha256": "20079ae25f6f304c0d293c3786fa7797cfe8fd4314f61a62d99101a20ef51205"
+    },
+    {
+      "path": "raw/negative-results.json",
+      "bytes": 3027,
+      "sha256": "8685046f02d930f1fc25b6d4fff3d4d3f274b2f60bc0029ec9f7117c6b1a5b54"
+    },
+    {
+      "path": "raw/v2Controls.identity.json",
+      "bytes": 225,
+      "sha256": "5133696e123b43d4d85038a18f0697ad7d5dffe3c14cb8c869e098b06f5f7690"
+    },
+    {
+      "path": "raw/yosoiV2.identity.json",
+      "bytes": 381,
+      "sha256": "5969bd4dc4950ba2f7337601321452355edda67596565666d4388d7afa87f42a"
+    }
+  ]
+}

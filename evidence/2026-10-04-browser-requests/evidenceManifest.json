@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "yosoi.benchmark.evidence-manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2213,
+      "sha256": "8a6b30858198de0972402d10037e4290e8e8428de92166150ddb78d97092b458"
+    },
+    {
+      "path": "raw/browser-results.jsonl",
+      "bytes": 21819,
+      "sha256": "ded5bed8cd1fd89aed7b1fe13c1935f061013cd81366a32558334be3998d3b77"
+    },
+    {
+      "path": "raw/environment.json",
+      "bytes": 12201,
+      "sha256": "d64b9e1a9bb1fadeb09a69840d0f58dcac28ae32da650976fad79f0d81dd9028"
+    },
+    {
+      "path": "raw/summary.json",
+      "bytes": 3733,
+      "sha256": "7dc2ae7caed929a5f2c6f23c7622d77281c310cad1e37225e2a381ab60b9122a"
+    },
+    {
+      "path": "raw/yosoiBrowser.Cargo.lock",
+      "bytes": 78460,
+      "sha256": "842e01b58dcfa6eba30b790d5d1f189e81c408227d65d94c0c7b952ecac71661"
+    },
+    {
+      "path": "raw/yosoiBrowser.identity.json",
+      "bytes": 385,
+      "sha256": "1e503ab32ed85378aade9730ca2eb7f33258ce5e5023bbbe123bb3bd9f9ad001"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+    Finished `bench` profile [optimized] target(s) in 0.03s
+     Running benches/caveman.rs (/benchmark-work/target/release/deps/caveman-ea71dd89d9e6531d)
+Benchmarking rustScraper/parse
+Benchmarking rustScraper/parse: Warming up for 3.0000 s
+Benchmarking rustScraper/parse: Collecting 100 samples in estimated 8.5002 s (10k iterations)
+Benchmarking rustScraper/parse: Analyzing
+Benchmarking rustScraper/locate
+Benchmarking rustScraper/locate: Warming up for 3.0000 s
+Benchmarking rustScraper/locate: Collecting 100 samples in estimated 5.0694 s (197k iterations)
+Benchmarking rustScraper/locate: Analyzing
+Benchmarking rustScraper/endToEnd
+Benchmarking rustScraper/endToEnd: Warming up for 3.0000 s
+Benchmarking rustScraper/endToEnd: Collecting 100 samples in estimated 8.5228 s (10k iterations)
+Benchmarking rustScraper/endToEnd: Analyzing

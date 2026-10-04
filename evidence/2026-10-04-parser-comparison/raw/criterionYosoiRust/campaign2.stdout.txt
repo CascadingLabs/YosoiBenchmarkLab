@@ -1,0 +1,12 @@
+yosoiRust/parse         time:   [858.07 µs 862.71 µs 867.72 µs]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+
+yosoiRust/locate        time:   [33.684 µs 33.844 µs 34.023 µs]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+
+yosoiRust/endToEnd      time:   [74.104 µs 75.413 µs 76.813 µs]
+Found 6 outliers among 100 measurements (6.00%)
+  6 (6.00%) high mild
+

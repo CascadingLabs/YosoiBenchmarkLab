@@ -1,5 +1,9 @@
 # Arm result protocol
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 ## Boundary
 
 An arm is a black-box executable inside its own locked environment. The lab
@@ -7,6 +11,12 @@ provides a benchmark specification and immutable input paths. The arm writes
 newline-delimited JSON records conforming to `schemas/arm-result.schema.json`.
 
 No arm imports another arm. The orchestrator never imports competitor packages.
+
+The comparative V1 runners currently retain adapter-specific JSON records in
+their quadrant schemas; V2 uses its separate diagnostic result envelope. The
+record classes below define the measurement contract, rather than claiming
+that every existing adapter emits the same wire schema. See the exact native
+records and verifier for each sealed evidence bundle.
 
 ## Required record classes
 

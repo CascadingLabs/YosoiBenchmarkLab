@@ -1,0 +1,14 @@
+rustScraper/parse       time:   [784.10 µs 786.03 µs 788.09 µs]
+Found 11 outliers among 100 measurements (11.00%)
+  7 (7.00%) high mild
+  4 (4.00%) high severe
+
+rustScraper/locate      time:   [25.472 µs 26.011 µs 26.907 µs]
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+
+rustScraper/endToEnd    time:   [840.53 µs 843.95 µs 847.85 µs]
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+

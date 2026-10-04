@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import statistics
@@ -44,8 +45,11 @@ def verifyParser(directory: Path) -> int:
         "raw/hardK5/raw.jsonl",
         "raw/hardSmokeAndResources/raw.jsonl",
     ):
+        campaigns = []
         for line in (directory / relativePath).read_text(encoding="utf-8").splitlines():
             record = json.loads(line)
+            if record["recordType"] == "campaign":
+                campaigns.append(record)
             candidate = record.get("adapterResult", record)
             if "terminalStatus" not in candidate:
                 continue
@@ -54,7 +58,26 @@ def verifyParser(directory: Path) -> int:
                 raise RuntimeError(
                     f"parser correctness gate failed: {relativePath}/{candidate.get('armId')}"
                 )
+            if candidate.get("armId") == "lolHtml" and record["recordType"] == "preflight":
+                parity = candidate.get("chunkParity", [])
+                if {item["chunkSize"] for item in parity} != {1, 7, 65536} or not all(item["exactOutput"] for item in parity):
+                    raise RuntimeError("lol_html chunk-boundary correctness evidence is incomplete")
             records += 1
+        summary = loadJson((directory / relativePath).with_name("summary.json"))
+        for row in summary["summaries"]:
+            group = [record for record in campaigns if all(record[key] == row[key] for key in ("armId", "task", "phase"))]
+            expectedCampaigns = summary["configuration"]["campaigns"]
+            if len(group) != expectedCampaigns or row["campaigns"] != expectedCampaigns:
+                raise RuntimeError("parser campaign count differs")
+            sampleKey = "cavemanSamples" if row["task"] == "caveman" else "hardSamples"
+            operationsKey = "cavemanOperations" if row["task"] == "caveman" else "hardOperations"
+            if any(len(record["samplesNs"]) != summary["configuration"][sampleKey]
+                   or record["operationsPerSample"] != summary["configuration"][operationsKey]
+                   for record in group):
+                raise RuntimeError("parser sample or operation count differs")
+            expected = statistics.median(statistics.median(record["samplesNs"]) for record in group)
+            if row["medianOfCampaignMediansNs"] != expected:
+                raise RuntimeError("parser timing summary differs from raw samples")
     return records
 
 
@@ -107,7 +130,7 @@ def verifyHttp(directory: Path) -> int:
     return len(records)
 
 
-def verifyBrowser(directory: Path) -> int:
+def verifyBrowser(directory: Path, allowNonRanked: bool = False) -> int:
     records = [
         json.loads(line)
         for line in (directory / "raw/browser-results.jsonl").read_text(encoding="utf-8").splitlines()
@@ -116,12 +139,27 @@ def verifyBrowser(directory: Path) -> int:
     for record in records:
         correct = record["terminalStatus"] == "ok" and record["values"] == expected
         cleaned = record["cleanupComplete"] and not record["residualChromiumPids"]
-        if not correct or not cleaned:
+        retainedFailure = allowNonRanked and record["terminalStatus"] in (
+            "resourceLimit", "timeout", "error", "wrongOutput"
+        ) and record.get("admitted") is False
+        if (not correct and not retainedFailure) or not cleaned:
             raise RuntimeError(f"browser correctness or cleanup gate failed: {record['armId']}")
     summary = loadJson(directory / "raw/summary.json")
+    if allowNonRanked:
+        for row in summary["summaries"]:
+            group = [record for record in records if record["armId"] == row["armId"] and record["concurrency"] == row["concurrency"]]
+            if len(group) != summary["campaigns"]:
+                raise RuntimeError("browser campaign attempts are incomplete")
+            allPassed = all(record["terminalStatus"] == "ok" for record in group)
+            if row.get("rankable", True) != allPassed:
+                raise RuntimeError("browser rankability does not match raw outcomes")
+            if not allPassed and any(key.startswith("median") for key in row):
+                raise RuntimeError("failed browser group contains ranked timing")
+        if len(records) != 4 * 3 * summary["campaigns"] or len(summary["summaries"]) != 12:
+            raise RuntimeError("browser matrix population is incomplete")
     verifyMedianSummary(
         records,
-        summary["summaries"],
+        [row for row in summary["summaries"] if row.get("rankable", True)],
         ("armId", "concurrency"),
         {
             "medianWallNs": "wallNs",
@@ -136,7 +174,10 @@ def verifyBrowser(directory: Path) -> int:
 
 
 def main() -> int:
-    baseline = loadJson(REPOSITORY / "evidence/baseline-v1.json")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--baseline", type=Path, default=REPOSITORY / "evidence/baseline-v1.json")
+    args = parser.parse_args()
+    baseline = loadJson(args.baseline)
     results: dict[str, Any] = {"schemaVersion": baseline["schemaVersion"], "quadrants": {}}
     verifiers = {
         "parserSelector": verifyParser,
@@ -148,10 +189,15 @@ def main() -> int:
         manifestPath = directory / "evidenceManifest.json"
         if sha256(manifestPath) != quadrant["evidenceManifestSha256"]:
             raise RuntimeError(f"baseline manifest digest differs: {manifestPath}")
+        verifier = verifiers[quadrant["id"]]
+        count = verifyBrowser(directory, baseline.get("allowNonRankedBrowserOutcomes", False)) if quadrant["id"] == "renderedAcquisition" else verifier(directory)
         results["quadrants"][quadrant["id"]] = {
             "manifestFiles": verifyManifest(directory),
-            "correctnessRecords": verifiers[quadrant["id"]](directory),
+            "retainedRecords": count,
         }
+        if quadrant["id"] == "renderedAcquisition" and baseline.get("allowNonRankedBrowserOutcomes", False):
+            records = [json.loads(line) for line in (directory / "raw/browser-results.jsonl").read_text().splitlines()]
+            results["quadrants"][quadrant["id"]]["nonRankedRecords"] = sum(record["terminalStatus"] != "ok" for record in records)
     print(json.dumps(results, indent=2))
     return 0
 

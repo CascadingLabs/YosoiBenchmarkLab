@@ -15,6 +15,7 @@ def main() -> int:
     parser.add_argument("--fixture", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--campaigns", type=int, default=5)
+    parser.add_argument("--group-prefix")
     args = parser.parse_args()
 
     args.output.mkdir(parents=True, exist_ok=True)
@@ -47,19 +48,28 @@ def main() -> int:
             command,
             cwd=args.crate,
             env=environment,
-            check=True,
+            check=False,
             capture_output=True,
             text=True,
         )
         (args.output / f"{baseline}.stdout.txt").write_text(completed.stdout, encoding="utf-8")
         (args.output / f"{baseline}.stderr.txt").write_text(completed.stderr, encoding="utf-8")
+        if completed.returncode:
+            print(completed.stderr[-4000:], flush=True)
+            completed.check_returncode()
         print(f"completed {baseline}")
 
     criterion_root = args.target / "criterion"
     evidence_root = args.output / "criterion"
     if evidence_root.exists():
         shutil.rmtree(evidence_root)
-    shutil.copytree(criterion_root, evidence_root)
+    if args.group_prefix:
+        evidence_root.mkdir()
+        for group in criterion_root.iterdir():
+            if group.is_dir() and group.name.startswith(args.group_prefix):
+                shutil.copytree(group, evidence_root / group.name)
+    else:
+        shutil.copytree(criterion_root, evidence_root)
     identity = {
         "campaigns": args.campaigns,
         "fixture": str(args.fixture),

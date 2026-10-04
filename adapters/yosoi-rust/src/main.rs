@@ -163,7 +163,8 @@ fn main() -> Result<()> {
         schema_version: "yosoi.benchmark.adapter.v1",
         arm_id: "yosoiRust",
         language: "rust",
-        runtime: "rust-1.98.0".to_owned(),
+        runtime: option_env!("YOSOI_BENCHMARK_RUST_VERSION")
+            .unwrap_or("unrecorded Rust toolchain").to_owned(),
         product_version: "0.1.0",
         source_revision: option_env!("YOSOI_SOURCE_REVISION").unwrap_or("unknown"),
         task: arguments.task,

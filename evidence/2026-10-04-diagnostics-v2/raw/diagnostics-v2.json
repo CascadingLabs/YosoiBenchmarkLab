@@ -1,0 +1,1535 @@
+{
+  "schemaVersion": "yosoi.benchmark.diagnostics.v2",
+  "status": "frozenForBaselineV2",
+  "purpose": "internalNonKpiDiagnostics",
+  "sourceRevisionPolicy": "immutableArtifactIdentityRequired",
+  "sizes": {
+    "tiny": 32,
+    "medium": 64,
+    "large": 4096
+  },
+  "targetIndex": 17,
+  "campaigns": 5,
+  "samplesPerCampaign": 5,
+  "operationsPerSample": 1,
+  "correctnessGate": {
+    "terminalStatus": "ok",
+    "matchCount": "exact",
+    "scalarValues": "exact",
+    "nodeValues": "deterministicPerArm",
+    "wrongOutputRanked": false
+  },
+  "reporting": {
+    "crossFormatAggregate": false,
+    "publicKpi": false,
+    "controlEquivalenceMustBeVisible": true
+  },
+  "cells": [
+    {
+      "id": "html.css.text",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true'] span.name",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "rustScraper",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.css.attribute",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": "rustScraper",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.css.node",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.xpath.text",
+      "documentClass": "sourceHtml",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']//span[@class='name']",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.xpath.attribute",
+      "documentClass": "sourceHtml",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.xpath.node",
+      "documentClass": "sourceHtml",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.treeText.text",
+      "documentClass": "sourceHtml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "html.treeText.node",
+      "documentClass": "sourceHtml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "rustScraper",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "xml.css.text",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "p|product[data-selected='true'] p|name",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "roxmltree",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.css.attribute",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "p|product[data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.css.node",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "p|product[data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.xpath.text",
+      "documentClass": "sourceXml",
+      "queryFamily": "xpath",
+      "expression": "/catalog/p:product[@data-selected='true']/p:name",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.xpath.attribute",
+      "documentClass": "sourceXml",
+      "queryFamily": "xpath",
+      "expression": "/catalog/p:product[@data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.xpath.node",
+      "documentClass": "sourceXml",
+      "queryFamily": "xpath",
+      "expression": "/catalog/p:product[@data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      }
+    },
+    {
+      "id": "xml.treeText.text",
+      "documentClass": "sourceXml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "xml.treeText.node",
+      "documentClass": "sourceXml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": "roxmltree",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "json.pointer.value",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPointer",
+      "expression": "/products/17/price",
+      "projection": "value",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "json",
+          "value": "$17.17"
+        }
+      ],
+      "controlArm": "serdeJson",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "json.path.value",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPath",
+      "expression": "$.products[17].price",
+      "projection": "value",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "json",
+          "value": "$17.17"
+        }
+      ],
+      "controlArm": "serdeJson",
+      "equivalence": "nearestPrimitive",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "text.literal.text",
+      "documentClass": "sourceText",
+      "queryFamily": "textLiteral",
+      "expression": "ORDER-000017",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "ORDER-000017"
+        }
+      ],
+      "controlArm": "stdString",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "text.regex.text",
+      "documentClass": "sourceText",
+      "queryFamily": "regex",
+      "expression": "ORDER-000017 TOTAL=\\$17\\.17",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "ORDER-000017 TOTAL=$17.17"
+        }
+      ],
+      "controlArm": "rustRegex",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "text.regex.captures",
+      "documentClass": "sourceText",
+      "queryFamily": "regex",
+      "expression": "ORDER-(?P<id>000017) TOTAL=\\$17\\.17",
+      "projection": "captures:id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text_with_captures",
+          "value": {
+            "text": "ORDER-000017 TOTAL=$17.17",
+            "captures": {
+              "id": "000017"
+            }
+          }
+        }
+      ],
+      "controlArm": "rustRegex",
+      "equivalence": "exact",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.css.text",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true'] span.name",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.css.attribute",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.css.node",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": "article.product[data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.xpath.text",
+      "documentClass": "renderedDom",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']//span[@class='name']",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.xpath.attribute",
+      "documentClass": "renderedDom",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']",
+      "projection": "attribute:data-id",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "attribute",
+          "value": {
+            "name": "data-id",
+            "value": "p-000017"
+          }
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.xpath.node",
+      "documentClass": "renderedDom",
+      "queryFamily": "xpath",
+      "expression": "//article[@data-selected='true']",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.treeText.text",
+      "documentClass": "renderedDom",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "text",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Unique target 000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "dom.treeText.node",
+      "documentClass": "renderedDom",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.role.name",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "role",
+      "expression": "target-button",
+      "projection": "accessibleName",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Buy p-000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.role.node",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "role",
+      "expression": "target-button",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.name.node",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "accessibleName",
+      "expression": "Buy p-000017",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.name.name",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "accessibleName",
+      "expression": "Buy p-000017",
+      "projection": "accessibleName",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Buy p-000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.text.text",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "accessibilityText",
+      "expression": "Buy p-000017",
+      "projection": "accessibilityText",
+      "expectedMatchCount": 1,
+      "expectedValues": [
+        {
+          "kind": "text",
+          "value": "Buy p-000017"
+        }
+      ],
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.text.node",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "accessibilityText",
+      "expression": "Buy p-000017",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    },
+    {
+      "id": "ax.state.node",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "stateExpanded",
+      "expression": "true",
+      "projection": "node",
+      "expectedMatchCount": 1,
+      "expectedValues": null,
+      "controlArm": null,
+      "equivalence": "internalOnly",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ],
+      "phases": [
+        "queryBuild",
+        "parse",
+        "locate",
+        "endToEnd"
+      ],
+      "controlPhases": [
+        "parse",
+        "locate",
+        "endToEnd"
+      ]
+    }
+  ],
+  "correctnessCases": [
+    {
+      "id": "html.noMatch",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": ".missing",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "xml.noMatch",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "missing",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "json.noMatch",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPointer",
+      "expression": "/missing",
+      "projection": "value",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "text.noMatch",
+      "documentClass": "sourceText",
+      "queryFamily": "textLiteral",
+      "expression": "MISSING",
+      "projection": "text",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "dom.noMatch",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": ".missing",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "ax.noMatch",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "role",
+      "expression": "missing",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 0
+    },
+    {
+      "id": "html.multiMatch",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "article.product",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 32
+    },
+    {
+      "id": "xml.multiMatch",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "p|product",
+      "projection": "node",
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      },
+      "expectedStatus": "ok",
+      "expectedMatchCount": 32
+    },
+    {
+      "id": "json.multiMatch",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPath",
+      "expression": "$.products[*].price",
+      "projection": "value",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 32
+    },
+    {
+      "id": "text.multiMatch",
+      "documentClass": "sourceText",
+      "queryFamily": "regex",
+      "expression": "ORDER-\\d{6}",
+      "projection": "text",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 32
+    },
+    {
+      "id": "dom.multiMatch",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": "article.product",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 32
+    },
+    {
+      "id": "ax.multiMatch",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "role",
+      "expression": "button",
+      "projection": "node",
+      "expectedStatus": "ok",
+      "expectedMatchCount": 31
+    },
+    {
+      "id": "html.invalidCss",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "",
+      "projection": "node",
+      "expectedStatus": "queryRejected"
+    },
+    {
+      "id": "html.invalidXpath",
+      "documentClass": "sourceHtml",
+      "queryFamily": "xpath",
+      "expression": "//*[",
+      "projection": "node",
+      "expectedStatus": "queryRejected"
+    },
+    {
+      "id": "xml.invalidXpath",
+      "documentClass": "sourceXml",
+      "queryFamily": "xpath",
+      "expression": "//*[",
+      "projection": "node",
+      "expectedStatus": "queryRejected"
+    },
+    {
+      "id": "json.invalidPath",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPath",
+      "expression": "$..products",
+      "projection": "value",
+      "expectedStatus": "queryRejected"
+    },
+    {
+      "id": "text.invalidRegex",
+      "documentClass": "sourceText",
+      "queryFamily": "regex",
+      "expression": "(?=a)",
+      "projection": "text",
+      "expectedStatus": "queryRejected"
+    },
+    {
+      "id": "html.matchLimit",
+      "documentClass": "sourceHtml",
+      "queryFamily": "css",
+      "expression": "article.product",
+      "projection": "node",
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "xml.matchLimit",
+      "documentClass": "sourceXml",
+      "queryFamily": "css",
+      "expression": "p|product",
+      "projection": "node",
+      "namespace": {
+        "prefix": "p",
+        "uri": "urn:product"
+      },
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "json.matchLimit",
+      "documentClass": "sourceJson",
+      "queryFamily": "jsonPath",
+      "expression": "$.products[*].price",
+      "projection": "value",
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "text.matchLimit",
+      "documentClass": "sourceText",
+      "queryFamily": "regex",
+      "expression": "ORDER-\\d{6}",
+      "projection": "text",
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "dom.matchLimit",
+      "documentClass": "renderedDom",
+      "queryFamily": "css",
+      "expression": "article.product",
+      "projection": "node",
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "ax.matchLimit",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "role",
+      "expression": "button",
+      "projection": "node",
+      "maxMatches": 1,
+      "expectedStatus": "limitFailed"
+    },
+    {
+      "id": "html.treeTextAttributeUnsupported",
+      "documentClass": "sourceHtml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "attribute:data-id",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "xml.treeTextAttributeUnsupported",
+      "documentClass": "sourceXml",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "attribute:data-id",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "dom.treeTextAttributeUnsupported",
+      "documentClass": "renderedDom",
+      "queryFamily": "treeText",
+      "expression": "Unique target 000017",
+      "projection": "attribute:data-id",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "ax.stateNameUnsupported",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "stateExpanded",
+      "expression": "true",
+      "projection": "accessibleName",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "json.regexUnsupported",
+      "documentClass": "sourceJson",
+      "queryFamily": "regex",
+      "expression": "price",
+      "projection": "text",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "text.jsonPointerUnsupported",
+      "documentClass": "sourceText",
+      "queryFamily": "jsonPointer",
+      "expression": "/products/0",
+      "projection": "value",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    },
+    {
+      "id": "ax.cssUnsupported",
+      "documentClass": "accessibilityTree",
+      "queryFamily": "css",
+      "expression": "button",
+      "projection": "node",
+      "expectedStatus": "queryRejected",
+      "classification": "unsupportedCombination"
+    }
+  ],
+  "extractionLane": {
+    "id": "contracts.html.products",
+    "documentClass": "sourceHtml",
+    "sizes": [
+      "tiny",
+      "medium"
+    ],
+    "phases": [
+      "planCached",
+      "locate",
+      "extract",
+      "extractValidate",
+      "extractValidateRequireAll",
+      "endToEnd"
+    ],
+    "controlArm": "rustScraperRecords",
+    "controlPhases": [
+      "endToEnd"
+    ],
+    "expectedRecordCount": "fixtureRecordCount",
+    "publicKpi": false
+  },
+  "extractionCompatibilityLanes": [
+    {
+      "id": "contracts.xml.products",
+      "documentClass": "sourceXml",
+      "phase": "endToEnd",
+      "expectedOutcome": "fixtureRecordCount",
+      "sizes": [
+        "tiny",
+        "medium"
+      ]
+    },
+    {
+      "id": "contracts.text.summary",
+      "documentClass": "sourceText",
+      "phase": "endToEnd",
+      "expectedOutcome": "oneRecord",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ]
+    },
+    {
+      "id": "contracts.dom.products",
+      "documentClass": "renderedDom",
+      "phase": "endToEnd",
+      "expectedOutcome": "fixtureRecordCount",
+      "sizes": [
+        "tiny",
+        "medium"
+      ]
+    },
+    {
+      "id": "contracts.ax.summary",
+      "documentClass": "accessibilityTree",
+      "phase": "endToEnd",
+      "expectedOutcome": "oneRecord",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ]
+    },
+    {
+      "id": "contracts.json.rejection",
+      "documentClass": "sourceJson",
+      "phase": "endToEndRejected",
+      "expectedOutcome": "oneValidationIssue",
+      "sizes": [
+        "tiny",
+        "medium",
+        "large"
+      ]
+    }
+  ],
+  "extractionLimitLanes": [
+    {
+      "id": "contracts.html.products",
+      "documentClass": "sourceHtml",
+      "size": "large",
+      "expectedStatus": "resourceBounded"
+    },
+    {
+      "id": "contracts.xml.products",
+      "documentClass": "sourceXml",
+      "size": "large",
+      "expectedStatus": "resourceBounded"
+    },
+    {
+      "id": "contracts.dom.products",
+      "documentClass": "renderedDom",
+      "size": "large",
+      "expectedStatus": "resourceBounded"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 /downloads/
 /target/
 /.venv/
-/node_modules/
+**/node_modules/
 /adapters/http/node-crawlee/storage/
 /adapters/browser/node-crawlee/storage/
 *.pyc

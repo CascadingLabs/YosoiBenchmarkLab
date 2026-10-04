@@ -1,5 +1,9 @@
 # Benchmark taxonomy
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 ## Admission rule
 
 A ranked competitor must be open source and runnable locally or self-hosted
@@ -10,7 +14,7 @@ Popularity helps choose candidates; it does not excuse an incomparable workload.
 
 ## Quadrant 1: parser and selector engines
 
-This is the first and current quadrant. All inputs are immutable local bytes.
+This is the first required quadrant. All inputs are immutable local bytes.
 No arm fetches a URL or starts a browser.
 
 | Candidate | Native role | Initial status | Notes |
@@ -25,7 +29,7 @@ No arm fetches a URL or starts a browser.
 | Rust `scraper` | Rust html5ever/selectors interface | Required | Same-language ecosystem control |
 | GoQuery | Go net/html plus Cascadia selector interface | Required | Go ecosystem control |
 | raw html5ever | Rust parser control | Secondary | Parse-only unless an equivalent query layer is added |
-| `lol_html` | Streaming HTML parser/rewriter | Unranked experiment | Never imply queryable-DOM equivalence |
+| `lol_html` | Streaming HTML parser/rewriter | Caveman ranked control | Exact same byte-to-value oracle; no queryable-DOM or pre-parsed-locate claim |
 
 “Required” means required by the first parser release unless method audit shows
 that the arm cannot perform the frozen operation or cannot be installed under
@@ -34,10 +38,11 @@ missing row.
 
 ## Quadrant 2: HTTP scraping frameworks
 
-This begins only after the parser specification and arm protocol are stable.
-The first common task is one deterministic localhost URL to one exact value.
+This runs after the parser quadrant. The implemented common task requests 64
+deterministic loopback URLs, extracts one exact value per page, and restores
+input order at concurrency 1, 4, and 8 with immediate or fixed-delay responses.
 
-Initial candidates: Yosoi Request, Scrapy, Scrapling Fetcher, Crawlee with
+Measured arms: Yosoi Request, Scrapy, Scrapling Fetcher, Crawlee with
 Cheerio, and Colly. Multi-page crawl behavior is a later sub-lane and exists
 only when Yosoi Crawl has a comparable public artifact.
 
@@ -46,9 +51,10 @@ only when Yosoi Crawl has a comparable public artifact.
 This begins after the HTTP quadrant. The shared boundary is one bounded
 browser-backed Request that returns immutable rendered evidence and cleans up.
 
-Initial candidates: Yosoi browser-backed Request, Scrapling DynamicFetcher,
-Crawlee/PlaywrightCrawler, Crawl4AI's local Request surface, and at most one
-direct-driver control. Every ranked arm must use regular Chrome/Chromium Stable
+Measured arms: Yosoi browser-backed Request, Scrapling DynamicFetcher,
+Crawlee/PlaywrightCrawler, and a direct Playwright control. The matrix requests
+four unique delayed-script pages at concurrency 1, 2, and 4. Crawl4AI remains
+outside the measured population. Every ranked arm must use regular Chrome/Chromium Stable
 intended for normal browsing.
 
 Persistent sessions, Actions, arbitrary JavaScript, multi-step interaction,

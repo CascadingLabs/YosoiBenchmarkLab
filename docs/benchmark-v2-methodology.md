@@ -1,5 +1,9 @@
 # Benchmark Lab V2 methodology
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 ## Plain English
 
 V2 answers “which internal document or extraction path is expensive?” It does
@@ -85,7 +89,7 @@ All benchmark inputs are generated offline and all timed work is local. Only
 initial dependency resolution may contact package registries.
 
 ```bash
-diagnosticWork=$(mktemp -d /tmp/yosoi-v2.XXXXXX)
+diagnosticWork=$(mktemp -d "$PWD/../.yosoi-v2.XXXXXX")
 python3 tools/generateV2Fixtures.py \
   --output "$diagnosticWork/fixtures" \
   --spec specs/diagnostics-v2.json
@@ -94,10 +98,11 @@ CARGO_BUILD_JOBS=1 python3 tools/buildV2Controls.py \
   --work "$diagnosticWork/build" \
   --output "$diagnosticWork/artifacts"
 
-CARGO_BUILD_JOBS=1 python3 tools/buildV2Yosoi.py \
+CARGO_BUILD_JOBS=1 python3 tools/buildCurrentYosoi.py \
   --yosoi-repository /path/to/Yosoi \
+  --revision @ --arms v2 \
   --work "$diagnosticWork/build" \
-  --output "$diagnosticWork/artifacts"
+  --output "$diagnosticWork/artifacts" --offline
 ```
 
 Run `tools/runV2Matrix.py`, `tools/runV2Extraction.py`,

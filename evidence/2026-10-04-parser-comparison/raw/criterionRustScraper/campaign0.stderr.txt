@@ -1,0 +1,30 @@
+   Compiling zerocopy-derive v0.8.59
+   Compiling zerocopy v0.8.59
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.151
+   Compiling half v2.7.1
+   Compiling clap_lex v1.1.1
+   Compiling regex-syntax v0.8.11
+   Compiling clap_builder v4.6.7
+   Compiling ciborium-ll v0.2.2
+   Compiling regex-automata v0.4.18
+   Compiling regex v1.13.1
+   Compiling ciborium v0.2.2
+   Compiling clap v4.6.7
+   Compiling tinytemplate v1.2.1
+   Compiling criterion v0.7.0
+   Compiling yosoi-benchmark-rust-scraper v0.1.0 (/benchmark-lab/adapters/rust-scraper)
+    Finished `bench` profile [optimized] target(s) in 44.52s
+     Running benches/caveman.rs (/benchmark-work/target/release/deps/caveman-ea71dd89d9e6531d)
+Benchmarking rustScraper/parse
+Benchmarking rustScraper/parse: Warming up for 3.0000 s
+Benchmarking rustScraper/parse: Collecting 100 samples in estimated 8.6073 s (10k iterations)
+Benchmarking rustScraper/parse: Analyzing
+Benchmarking rustScraper/locate
+Benchmarking rustScraper/locate: Warming up for 3.0000 s
+Benchmarking rustScraper/locate: Collecting 100 samples in estimated 5.0831 s (187k iterations)
+Benchmarking rustScraper/locate: Analyzing
+Benchmarking rustScraper/endToEnd
+Benchmarking rustScraper/endToEnd: Warming up for 3.0000 s
+Benchmarking rustScraper/endToEnd: Collecting 100 samples in estimated 8.4654 s (10k iterations)
+Benchmarking rustScraper/endToEnd: Analyzing

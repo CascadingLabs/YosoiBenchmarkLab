@@ -1,0 +1,14 @@
+    Finished `bench` profile [optimized] target(s) in 0.08s
+     Running benches/caveman.rs (/benchmark-work/target/release/deps/caveman-90223597655cce8a)
+Benchmarking yosoiRust/parse
+Benchmarking yosoiRust/parse: Warming up for 3.0000 s
+Benchmarking yosoiRust/parse: Collecting 100 samples in estimated 9.4543 s (10k iterations)
+Benchmarking yosoiRust/parse: Analyzing
+Benchmarking yosoiRust/locate
+Benchmarking yosoiRust/locate: Warming up for 3.0000 s
+Benchmarking yosoiRust/locate: Collecting 100 samples in estimated 5.1536 s (152k iterations)
+Benchmarking yosoiRust/locate: Analyzing
+Benchmarking yosoiRust/endToEnd
+Benchmarking yosoiRust/endToEnd: Warming up for 3.0000 s
+Benchmarking yosoiRust/endToEnd: Collecting 100 samples in estimated 5.1808 s (66k iterations)
+Benchmarking yosoiRust/endToEnd: Analyzing

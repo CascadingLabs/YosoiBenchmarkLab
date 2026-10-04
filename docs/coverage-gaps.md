@@ -1,5 +1,9 @@
 # Baseline v1 coverage gaps and Benchmark Lab V2
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 Baseline v1 is a useful HTML/CSS-shaped optimization baseline. It is not a
 general benchmark of every document, query, projection, or extraction path in
 Yosoi.
@@ -24,6 +28,12 @@ Yosoi.
 The source-HTML fixture includes useful scale, Unicode, distractors, table
 repair pressure, SVG islands, and bounded malformed fragments. It does not
 prove complete HTML recovery conformance or broad selector-feature performance.
+
+That table describes the historical September baseline. The current caveman
+rerun also ranks `lol_html` for the exact byte-to-value task, with 1-byte,
+7-byte, and 64 KiB chunk-boundary correctness checks. This adds a streaming
+execution control; it does not add incremental-input memory scaling or
+time-to-first-output measurements.
 
 ## Why these do not become one graph
 
@@ -81,7 +91,7 @@ to parsing:
 
 [Benchmark Lab V2 — Format & Extraction Diagnostics](https://linear.app/cascadinglabs/project/yosoi-benchmark-lab-v2-format-and-extraction-diagnostics-44118b3a45cb)
 owns the implemented internal diagnostic baseline under Oxidation. The sealed
-[V2 evidence](../evidence/2026-09-27-diagnostics-v2/README.md) covers every
+The [historical V2 evidence](../evidence/2026-09-27-diagnostics-v2/README.md) covers every
 frozen compatible cell and remains separate from headline KPI gates.
 
 - CAS-476 freezes the semantic cells and non-KPI protocol.

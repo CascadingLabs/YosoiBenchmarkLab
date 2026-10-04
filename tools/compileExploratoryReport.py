@@ -64,6 +64,7 @@ def main() -> int:
     parser.add_argument("--fixtures", type=Path, required=True)
     parser.add_argument("--yosoi-identity", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--captured-on", default="2026-09-27")
     args = parser.parse_args()
 
     args.output.mkdir(parents=True, exist_ok=True)
@@ -89,12 +90,12 @@ def main() -> int:
     arms = sorted(identities)
     caveman_rows = []
     for arm in sorted(arms, key=lambda value: caveman_map[(value, "endToEnd")]["medianOfCampaignMediansNs"]):
-        parse = caveman_map[(arm, "parse")]["medianOfCampaignMediansNs"] / 1_000_000
-        locate = caveman_map[(arm, "locate")]["medianOfCampaignMediansNs"] / 1_000_000
+        parse = f"{caveman_map[(arm, 'parse')]['medianOfCampaignMediansNs'] / 1_000_000:.3f}" if (arm, "parse") in caveman_map else "—"
+        locate = f"{caveman_map[(arm, 'locate')]['medianOfCampaignMediansNs'] / 1_000_000:.3f}" if (arm, "locate") in caveman_map else "—"
         end_to_end = caveman_map[(arm, "endToEnd")]["medianOfCampaignMediansNs"] / 1_000_000
         p95 = caveman_map[(arm, "endToEnd")]["p95AllSamplesNs"] / 1_000_000
         throughput = caveman_map[(arm, "endToEnd")]["throughputInputBytesPerSecond"] / 1_000_000
-        caveman_rows.append([arm, f"{parse:.3f}", f"{locate:.3f}", f"{end_to_end:.3f}", f"{p95:.3f}", f"{throughput:.2f}"])
+        caveman_rows.append([arm, parse, locate, f"{end_to_end:.3f}", f"{p95:.3f}", f"{throughput:.2f}"])
 
     hard_rows = []
     all_hard = set(arm for arm, phase in hard_map if phase == "endToEnd") | {
@@ -169,11 +170,14 @@ def main() -> int:
         f"{item['id']} {item['bytes']:,} bytes SHA-256 `{item['sha256']}`" for item in fixture_manifest["fixtures"]
     )
 
-    report = f"""# Exploratory parser and selector benchmark — 2026-09-27
+    best_caveman = min(arms, key=lambda arm: caveman_map[(arm, "endToEnd")]["medianOfCampaignMediansNs"])
+    best_hard = min((arm for arm, phase in hard_map if phase == "endToEnd"),
+                    key=lambda arm: hard_map[(arm, "endToEnd")]["medianOfCampaignMediansNs"])
+    report = f"""# Exploratory parser and selector benchmark — {args.captured_on}
 
 ## Decision
 
-Yosoi is **not currently the fastest parser/selector arm** on these frozen exploratory workloads. Parsel leads both the 87,928-byte caveman task and the 17,186,672-byte hard catalog. Yosoi's clearest current advantage is lower hard-pass peak RSS than the other compiled Rust/Go controls, not latency.
+The lowest retained end-to-end medians are **{best_caveman}** on caveman and **{best_hard}** on the repeated hard-catalog campaign. The tables below retain every admitted arm; these results apply to this source snapshot and host.
 
 These are local exploratory results, not a public “fastest” claim.
 
@@ -181,7 +185,7 @@ These are local exploratory results, not a public “fastest” claim.
 
 {fixture_text}.
 
-All nine arms returned the exact ordered caveman value and all 64 exact ordered hard-catalog values before timing. No incorrect arm was ranked.
+All {len(arms)} caveman arms returned the exact ordered value before timing. The hard suite separately gated its nine admitted arms against all 64 exact ordered values. No incorrect arm was ranked.
 
 ## Caveman warm timings — five campaigns
 
@@ -191,7 +195,7 @@ Each arm ran five fresh-process campaigns, 100 samples per campaign, 10 operatio
 
 ## Hard-catalog end-to-end
 
-The seven sub-400 MiB arms ran five campaigns with five samples per campaign. Beautiful Soup retains its correctness-gated single exploratory sample because repeatedly allocating 878 MiB–1.0 GiB increased workstation swap pressure.
+Seven arms ran five campaigns with five samples per campaign. Beautiful Soup retains correctness-gated single exploratory samples under the established resource-bounded protocol.
 
 {table(['Arm', 'Median ms', 'P95 ms', 'Input MB/s', 'Evidence'], hard_rows)}
 
@@ -219,13 +223,14 @@ Five independent Criterion 0.7 campaigns per Rust arm, each with 3 s warm-up, 5 
 - Rust `scraper` completed caveman end-to-end in {scraper_caveman / 1_000_000:.3f} ms; Yosoi took {yosoi_caveman / scraper_caveman:.2f}× as long.
 - On the hard catalog, Parsel was {parsel_hard / 1_000_000:.3f} ms, Rust `scraper` was {scraper_hard / 1_000_000:.3f} ms, and Yosoi was {yosoi_hard / 1_000_000:.3f} ms.
 - Yosoi peak RSS was {resource_by_arm['yosoiRust']['aggregatePeakRssBytes'] / 1_048_576:.1f} MiB versus Rust `scraper` {resource_by_arm['rustScraper']['aggregatePeakRssBytes'] / 1_048_576:.1f} MiB and GoQuery {resource_by_arm['goquery']['aggregatePeakRssBytes'] / 1_048_576:.1f} MiB.
-- Every measured parser is full-buffered for this DOM task. `lol_html` remains outside the DOM ranking until a semantically equivalent streaming task exists.
+- All input bytes are resident before timing. Yosoi's end-to-end arm calls ordinary `Document::locate`, whose default dispatcher can stream eligible plans; its explicit parse and pre-parsed locate phases use a retained tree. End-to-end latency therefore need not equal parse plus locate. The tables compare exact URL-free byte-to-value operations, not universal full-DOM parser speed.
+- The package table's `fullBuffer` label describes resident input delivery. The `lol_html` caveman control uses ordinary selector/text handlers with 64 KiB chunks over resident input; exact output is checked with 1-byte, 7-byte, and 64 KiB chunk boundaries. It is ranked for this byte-to-value task, with no invented parse-only or pre-parsed-locate timings. Time-to-first-output was not measured.
 
 ## Evidence boundaries
 
 - Yosoi was built into an immutable local binary from source revision `{identities['yosoiRust']['sourceRevision']}`. This is not yet a published release artifact, so the result is exploratory.
 - The common cross-language warm harness uses each language's in-process monotonic timer. Criterion confirms only the two Rust arms.
-- The hard K=5 campaign intentionally excludes the two Beautiful Soup arms because swap grew during the one-pass resource run. Their retained rows are single-sample observations.
+- The hard K=5 campaign excludes the two Beautiful Soup arms under the established resource-bounded protocol. Their retained rows are single-sample observations.
 - RSS is aggregate process-tree resident memory. VSZ is not reported as RAM.
 - Results apply only to these fixtures, exact versions, machine, and command boundaries. They do not establish general accuracy or universal speed.
 

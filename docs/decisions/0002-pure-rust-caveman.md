@@ -1,5 +1,9 @@
 # Decision 0002: the public caveman result is pure Rust
 
+Current evidence: [2026-10-04 benchmark results](../current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 Status: accepted.
 
 The public Yosoi caveman arm uses the public Rust surface or a tiny Rust release

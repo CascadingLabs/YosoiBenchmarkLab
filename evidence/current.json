@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "yosoi.benchmark.baseline.v1",
+  "title": "Yosoi Benchmark Lab current local snapshot",
+  "capturedOn": "2026-10-04",
+  "status": "exploratoryWithRetainedResourceStops",
+  "allowNonRankedBrowserOutcomes": true,
+  "quadrants": [
+    {
+      "id": "parserSelector",
+      "evidenceDirectory": "evidence/2026-10-04-parser-comparison",
+      "evidenceManifestSha256": "01824f49a3072e14f220756152031b850c565d66c511b3569c4b8c0d57a7c837",
+      "yosoiSourceRevision": "2d9269fe045149b2b2289dc4d3d47a354a92c8b4",
+      "yosoiArtifactSha256": "1f42b7c0ceee1e4f5e2b42e77606a753f4a75c3212da5d1eec7cbfaa9a6024b6"
+    },
+    {
+      "id": "httpAcquisition",
+      "evidenceDirectory": "evidence/2026-10-04-http-e2e",
+      "evidenceManifestSha256": "ee78503025d4da0c0b778c852d461a1165693459e075697a220d4ec562d5e1ae",
+      "yosoiSourceRevision": "2d9269fe045149b2b2289dc4d3d47a354a92c8b4",
+      "yosoiArtifactSha256": "c5487549a114c10dd0e07194b12004c1da04459b70001d77f7118f51a6200b6d"
+    },
+    {
+      "id": "renderedAcquisition",
+      "evidenceDirectory": "evidence/2026-10-04-browser-requests",
+      "evidenceManifestSha256": "653403d7dc46c848cc011bb865aaccb7c4e67599733cb24e2d15566e622debfd",
+      "yosoiSourceRevision": "2d9269fe045149b2b2289dc4d3d47a354a92c8b4",
+      "yosoiArtifactSha256": "fff1d2274d51cae01d6d21fda942a8ee0001d847e73b2eaee16a14bda6578418"
+    }
+  ],
+  "diagnosticsV2": {
+    "evidenceDirectory": "evidence/2026-10-04-diagnostics-v2",
+    "evidenceManifestSha256": "e883dfdf1e429da07a15c9eda5b5702dcfbff9a8c397141a50837606359961a9"
+  },
+  "knownLimitations": [
+    "Local working-copy source archive, not a published release artifact.",
+    "One workstation; power/frequency and unrelated background work not controlled.",
+    "Six browser c4 campaigns stopped at the declared 3 GiB aggregate RSS cap and have no ranked timing.",
+    "Yosoi default byte-to-value location may stream eligible plans; explicit parse/locate phases measure retained trees.",
+    "lol_html is ranked for caveman byte-to-value only; no retained-DOM or pre-parsed-locate timing is invented.",
+    "Sampled RSS can miss brief peaks and sums shared pages; no PSS or allocation counts were collected.",
+    "September results use different source/compiler/dependency/browser identities and are historical context."
+  ]
+}

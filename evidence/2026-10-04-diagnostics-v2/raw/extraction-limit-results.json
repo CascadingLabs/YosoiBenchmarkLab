@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "yosoi.benchmark.extraction-limits.v2",
+  "records": [
+    {
+      "id": "contracts.html.products",
+      "documentClass": "sourceHtml",
+      "size": "large",
+      "expectedStatus": "resourceBounded",
+      "observedStatus": "resourceBounded",
+      "passed": true,
+      "value": {
+        "kind": "resource_bounded",
+        "value": {
+          "failure": "LimitExhausted { limit: SelectorVisits, maximum: 10000000, observed: 10000001 }"
+        }
+      }
+    },
+    {
+      "id": "contracts.xml.products",
+      "documentClass": "sourceXml",
+      "size": "large",
+      "expectedStatus": "resourceBounded",
+      "observedStatus": "resourceBounded",
+      "passed": true,
+      "value": {
+        "kind": "resource_bounded",
+        "value": {
+          "failure": "LimitExhausted { limit: SelectorVisits, maximum: 10000000, observed: 10000001 }"
+        }
+      }
+    },
+    {
+      "id": "contracts.dom.products",
+      "documentClass": "renderedDom",
+      "size": "large",
+      "expectedStatus": "resourceBounded",
+      "observedStatus": "resourceBounded",
+      "passed": true,
+      "value": {
+        "kind": "resource_bounded",
+        "value": {
+          "failure": "LimitExhausted { limit: SelectorVisits, maximum: 10000000, observed: 10000001 }"
+        }
+      }
+    }
+  ]
+}

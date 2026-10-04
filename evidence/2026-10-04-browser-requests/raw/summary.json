@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "yosoi.benchmark.browser-results.v1",
+  "count": 4,
+  "campaigns": 3,
+  "chromium": "/regular-stable-chrome",
+  "maxAggregateRssBytes": 3221225472,
+  "summaries": [
+    {
+      "armId": "yosoiBrowserRequest",
+      "concurrency": 1,
+      "campaigns": 3,
+      "medianWallNs": 2601706380,
+      "medianOuterWallNs": 2623643111,
+      "medianThroughputRequestsPerSecond": 1.5374525083802886,
+      "medianPeakRssBytes": 1498484736,
+      "medianMeanRssBytes": 797897596
+    },
+    {
+      "armId": "yosoiBrowserRequest",
+      "concurrency": 2,
+      "campaigns": 3,
+      "medianWallNs": 1562805798,
+      "medianOuterWallNs": 1571231858,
+      "medianThroughputRequestsPerSecond": 2.559499078592489,
+      "medianPeakRssBytes": 2833649664,
+      "medianMeanRssBytes": 1519932630
+    },
+    {
+      "armId": "yosoiBrowserRequest",
+      "concurrency": 4,
+      "campaigns": 3,
+      "rankable": false,
+      "outcomes": [
+        "resourceLimit",
+        "resourceLimit",
+        "resourceLimit"
+      ]
+    },
+    {
+      "armId": "scraplingDynamicFetcher",
+      "concurrency": 1,
+      "campaigns": 3,
+      "medianWallNs": 2844480687,
+      "medianOuterWallNs": 2923612599,
+      "medianThroughputRequestsPerSecond": 1.4062320824609629,
+      "medianPeakRssBytes": 1151373312,
+      "medianMeanRssBytes": 493137488
+    },
+    {
+      "armId": "scraplingDynamicFetcher",
+      "concurrency": 2,
+      "campaigns": 3,
+      "medianWallNs": 1457382777,
+      "medianOuterWallNs": 1544272869,
+      "medianThroughputRequestsPerSecond": 2.7446461308085017,
+      "medianPeakRssBytes": 2224824320,
+      "medianMeanRssBytes": 864717358
+    },
+    {
+      "armId": "scraplingDynamicFetcher",
+      "concurrency": 4,
+      "campaigns": 3,
+      "rankable": false,
+      "outcomes": [
+        "resourceLimit",
+        "resourceLimit",
+        "resourceLimit"
+      ]
+    },
+    {
+      "armId": "crawleePlaywright",
+      "concurrency": 1,
+      "campaigns": 3,
+      "medianWallNs": 1119189124,
+      "medianOuterWallNs": 1784688433,
+      "medianThroughputRequestsPerSecond": 3.574016146354188,
+      "medianPeakRssBytes": 1542828032,
+      "medianMeanRssBytes": 622906647
+    },
+    {
+      "armId": "crawleePlaywright",
+      "concurrency": 2,
+      "campaigns": 3,
+      "medianWallNs": 952704187,
+      "medianOuterWallNs": 1632645426,
+      "medianThroughputRequestsPerSecond": 4.198575018963362,
+      "medianPeakRssBytes": 1486528512,
+      "medianMeanRssBytes": 616848856
+    },
+    {
+      "armId": "crawleePlaywright",
+      "concurrency": 4,
+      "campaigns": 3,
+      "medianWallNs": 928227641,
+      "medianOuterWallNs": 1447918805,
+      "medianThroughputRequestsPerSecond": 4.309287747228376,
+      "medianPeakRssBytes": 1495777280,
+      "medianMeanRssBytes": 643144908
+    },
+    {
+      "armId": "directPlaywright",
+      "concurrency": 1,
+      "campaigns": 3,
+      "medianWallNs": 678619427,
+      "medianOuterWallNs": 1060373428,
+      "medianThroughputRequestsPerSecond": 5.894319910178463,
+      "medianPeakRssBytes": 963932160,
+      "medianMeanRssBytes": 608865822
+    },
+    {
+      "armId": "directPlaywright",
+      "concurrency": 2,
+      "campaigns": 3,
+      "medianWallNs": 597761930,
+      "medianOuterWallNs": 1013130127,
+      "medianThroughputRequestsPerSecond": 6.691627216875454,
+      "medianPeakRssBytes": 1209294848,
+      "medianMeanRssBytes": 679073605
+    },
+    {
+      "armId": "directPlaywright",
+      "concurrency": 4,
+      "campaigns": 3,
+      "medianWallNs": 502997357,
+      "medianOuterWallNs": 998036849,
+      "medianThroughputRequestsPerSecond": 7.952328067600561,
+      "medianPeakRssBytes": 1671737344,
+      "medianMeanRssBytes": 729979172
+    }
+  ]
+}

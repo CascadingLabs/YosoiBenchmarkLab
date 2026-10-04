@@ -1,5 +1,9 @@
 # Parser and selector methodology
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 ## Decision
 
 The public parser story has one deliberately simple caveman benchmark backed by
@@ -51,6 +55,15 @@ Contract:
 Separate rows report parse-only, locate-only on a pre-parsed document,
 end-to-end, and cold process startup. Only end-to-end is eligible for the hero
 chart.
+
+Yosoi's end-to-end adapter uses ordinary `Document::locate`, including its
+default routing for eligible plans. Explicit `Document::parse` and
+`ParsedDocument::locate` measure the retained-tree path separately. Default
+location can use a streaming evaluator on resident input, so end-to-end may
+be faster than the explicit full-tree parse phase. Report that boundary;
+do not add the phase timings or describe default byte-to-value latency as
+universal full-DOM parsing speed. Standalone streaming controls still need
+their own equivalent public-operation adapter and correctness proof.
 
 ## Workload 2: hard catalog
 
@@ -171,7 +184,7 @@ remains a published failure.
   separately from the public Yosoi result.
 - Publish losses and unsupported cases.
 
-## First implementation slice
+## Implementation sequence
 
 1. Review and freeze `specs/parser-selector-v1.json`.
 2. Implement the deterministic fixture generator and oracle verifier.
@@ -180,5 +193,6 @@ remains a published failure.
 4. Add the pure-Rust Yosoi arm.
 5. Add competitors one isolated arm at a time.
 
-Only steps 1 and the documentation/specification work are in the current
-revision.
+The current lab includes real parser adapters, shared correctness/resource
+runners, Criterion confirmation, and retained evidence. The complete rerun
+commands and frozen-source build procedure are in [Rerun the complete lab](rerunning.md).

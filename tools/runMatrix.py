@@ -22,7 +22,7 @@ PYTHON_ARMS = {
     "scraplingParser": "scrapling",
     "selectolaxLexbor": "selectolax",
 }
-BINARY_ARMS = ["yosoiRust", "rustScraper", "goquery"]
+BINARY_ARMS = ["yosoiRust", "rustScraper", "goquery", "lolHtml"]
 PHASES = ["parse", "locate", "endToEnd"]
 
 
@@ -59,6 +59,8 @@ def command_for(
     ]
     if arm in PYTHON_ARMS:
         return [str(python), str(repository / "adapters" / "python" / "adapter.py"), "--arm", arm, *common]
+    if arm == "lolHtml":
+        return [str(artifacts / arm), *common, "--manifest", str(fixture.parent / "manifest.json"), "--chunk-size", "65536"]
     return [str(artifacts / arm), *common]
 
 
@@ -201,7 +203,8 @@ def main() -> int:
         parser.error("tasks must be a comma-separated subset of caveman,hard")
     fixture_by_task = {task: all_fixtures[task] for task in selected_tasks}
     all_arms = [*PYTHON_ARMS, *BINARY_ARMS]
-    arms = [item.strip() for item in args.arms.split(",") if item.strip()] if args.arms else all_arms
+    default_arms = all_arms if selected_tasks == ["caveman"] else [arm for arm in all_arms if arm != "lolHtml"]
+    arms = [item.strip() for item in args.arms.split(",") if item.strip()] if args.arms else default_arms
     if not arms or any(item not in all_arms for item in arms):
         parser.error("arms contains an unknown or empty arm")
     args.output.mkdir(parents=True, exist_ok=True)
@@ -225,6 +228,8 @@ def main() -> int:
                     0,
                     1,
                 )
+                if arm == "lolHtml":
+                    command.extend(["--check-chunk-sizes", "1,7,65536"])
                 result, outer_wall = run_json(command)
                 if result["values"] != fixture["expectedValues"]:
                     raise RuntimeError(f"correctness failure for {arm}/{task}")
@@ -243,7 +248,7 @@ def main() -> int:
                 for task, fixture in fixture_by_task.items():
                     samples = args.caveman_samples if task == "caveman" else args.hard_samples
                     operations = args.caveman_operations if task == "caveman" else args.hard_operations
-                    for phase in PHASES:
+                    for phase in (["endToEnd"] if arm == "lolHtml" else PHASES):
                         command = command_for(
                             repository,
                             args.python,
@@ -351,7 +356,7 @@ def main() -> int:
             "installedPackageBytes": size,
             "runnableEnvironmentBytes": size,
             "artifactBytes": size,
-            "streamingMode": "fullBuffer",
+            "streamingMode": "incremental" if arm == "lolHtml" else "fullBuffer",
         }
 
     summaries = summarize_campaigns(campaign_records)

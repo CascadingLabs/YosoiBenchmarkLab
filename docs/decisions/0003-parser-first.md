@@ -1,5 +1,9 @@
 # Decision 0003: start fully offline with parsers
 
+Current evidence: [2026-10-04 benchmark results](../current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 Status: accepted.
 
 The first implementation slice is the parser/selector specification and corpus.

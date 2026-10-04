@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "yosoi.benchmark.evidence-manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1834,
+      "sha256": "2e5f3927a0a3375f6529d1b2ca5da6d35c3c0e24f8f361356f2ce26c3697b0aa"
+    },
+    {
+      "path": "raw/environment.json",
+      "bytes": 12201,
+      "sha256": "d64b9e1a9bb1fadeb09a69840d0f58dcac28ae32da650976fad79f0d81dd9028"
+    },
+    {
+      "path": "raw/http-results.jsonl",
+      "bytes": 295826,
+      "sha256": "9f9b3f3540d6718f2df6cb4717b20d07b9c31e7d204ca12a0c4e5b695e4235bc"
+    },
+    {
+      "path": "raw/summary.json",
+      "bytes": 11042,
+      "sha256": "8293cd376980f539d03d87cd491b5109117abcf2745f85fdc6fe56f4ee03a8a3"
+    },
+    {
+      "path": "raw/yosoiHttp.Cargo.lock",
+      "bytes": 48975,
+      "sha256": "6cebecd41a971bd88ea4531aa1b7753228323ace8d85b7f68c664bf03577c50a"
+    },
+    {
+      "path": "raw/yosoiHttp.identity.json",
+      "bytes": 382,
+      "sha256": "217925993de8e5c3d7ab5b38f13134b8f58781dc948d1db29de6beb970425ce8"
+    }
+  ]
+}

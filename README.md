@@ -1,127 +1,96 @@
 # Yosoi Benchmark Lab
 
-Yosoi Benchmark Lab is the independent evidence repository for comparing
-[Yosoi](https://github.com/CascadingLabs/Yosoi)
-with open-source software that can run locally or be self-hosted without paid
-API access. Competitor packages and benchmark tooling stay outside the Yosoi
-repository and build graph.
+Independent, correctness-gated comparisons of [Yosoi](https://github.com/CascadingLabs/Yosoi)
+with open-source tools that run locally. Competitor dependencies stay in this lab;
+Yosoi is consumed as immutable built artifacts.
 
-Pass the Yosoi checkout path (for example, `../Yosoi`) to the artifact builders
-with `--yosoi-repository`. Benchmark runners consume the resulting built artifacts.
+## Current rerun — 2026-10-04
 
-## Baseline v1
+Source snapshot: `2d9269fe045149b2b2289dc4d3d47a354a92c8b4`.
+This is a local working-copy source build, not a published Yosoi release.
+Rust 1.99.0; AMD Ryzen AI 9 HX 370; Linux x86-64. Rendered arms use regular
+Stable Chrome 154.0.8037.97 with sandboxing enabled.
 
-Baseline v1 is complete. It is an intentionally unflattering, current-host
-optimization baseline—not a public “fastest” claim or release certification.
-Every ranked result passed exact output correctness first.
+All comparative lanes and V2 diagnostics were rerun and verified. Browser
+verification covers **30 successful runs and six retained resource stops**;
+those six c4 runs have no ranked timing.
 
-| Quadrant | Best retained arm | Yosoi | Current result |
-| --- | ---: | ---: | --- |
-| Parser end-to-end, 87,928 B | Parsel 0.608 ms | 1.205 ms | Yosoi took 1.98× as long |
-| HTTP, 64 responses, 20 ms delay, c8 | Colly 370.5 req/s | 332.6 req/s | Yosoi was 10.2% lower throughput |
-| Rendered acquisition, four pages, c4 | Crawlee/Playwright 0.789 s | 1.389 s | Yosoi took 1.76× as long |
+| Lane | Yosoi | Comparative result |
+| --- | ---: | --- |
+| Caveman byte-to-value | 0.072 ms | First of 10 arms; `lol_html` second (full ranking below) |
+| Hard catalog byte-to-value | 10.141 ms | Lowest repeated median; next `scraplingParser` 146.119 ms |
+| HTTP, 20 ms delay, c8 | 320.0 req/s | Colly 365.5 req/s |
+| Rendered Requests, c4 | Resource-stopped | Yosoi and Scrapling unranked at the 3 GiB cap; Crawlee 0.928 s |
 
-The lower-level direct Playwright control completed the rendered c4 workload in
-0.487 s. It is useful evidence for browser-pool potential, but it is not treated
-as a product-equivalent framework arm.
+[Full current results](docs/current-results.md) · [Evidence register](evidence/current.json)
 
-Read the plain-English [Baseline v1 report](docs/baseline-v1.md), or inspect the
-sealed evidence directly:
 
-- [parser and selector engines](evidence/2026-09-27-parser-exploratory/README.md);
-- [HTTP acquisition and extraction](evidence/2026-09-27-http-e2e/README.md);
-- [rendered browser acquisition](evidence/2026-09-27-browser-requests/README.md);
-- [machine-readable baseline identity](evidence/baseline-v1.json);
-- [explicit V1 gaps and the non-KPI V2 backlog](docs/coverage-gaps.md).
+## Caveman ranking: HTML bytes → the correct price
 
-## Scope
+Every arm reads the same **87,928-byte** catalog, runs the same selector, and
+returns exactly **`USD 19.73`**. Lower end-to-end latency is better.
 
-The completed benchmark program has three quadrants:
+| Rank | Arm | End-to-end ms | Execution path |
+| --- | --- | ---: | --- |
+| 1 | Yosoi | 0.072 | Default locator: eligible streaming, tree fallback |
+| 2 | lol_html 3.0.1 | 0.170 | Streaming rewriter |
+| 3 | Parsel | 0.650 | Retained tree |
+| 4 | Scrapling parser | 0.670 | Retained tree |
+| 5 | lxml | 0.678 | Retained tree |
+| 6 | selectolax / Lexbor | 0.789 | Retained tree |
+| 7 | Rust scraper | 0.837 | Retained tree |
+| 8 | GoQuery | 1.123 | Retained tree |
+| 9 | Beautiful Soup / lxml | 13.565 | Retained tree |
+| 10 | Beautiful Soup / html.parser | 19.183 | Retained tree |
 
-1. parser and selector engines;
-2. HTTP scraping frameworks;
-3. rendered browser Requests.
+Five independent campaigns, 100 samples per campaign, 10 operations per sample.
+The table ranks the **median of the five campaign medians**. All input bytes and
+locator setup are prepared before timing. File I/O, process startup, and result
+checking are outside the warm timer. Raw samples and losing results are retained.
 
-It stops there. Persistent sessions, Actions, arbitrary JavaScript, multi-step
-browser automation, hosted APIs, paid services, and hosted-only capabilities
-are outside this project. AI/adaptive algorithms may be evaluated separately,
-but they are not part of Baseline v1.
+## Why end-to-end can be faster than parse-only
 
-## Diagnostic Baseline v2
+The caveman task asks for the price value. Full-tree construction is measured
+separately. Yosoi's ordinary default locator can stream supported queries and
+fall back to a retained tree. `lol_html` uses its public CSS/text handlers on
+64 KiB chunks of the same resident input.
 
-V2 is implemented as a separate internal, non-KPI matrix. It covers all 36
-frozen compatible document/query/projection cells across source HTML, XML,
-JSON, decoded text, rendered DOM, and accessibility trees, plus six typed
-Contract/Extractor lanes.
+| Measurement | What we time, simply | Yosoi ms |
+| --- | --- | ---: |
+| Parse-only | Build the full parsed tree | 0.839 |
+| Locate-only | Find the price in an already parsed tree | 0.069 |
+| End-to-end | Get the price from HTML bytes through the default locator | 0.072 |
 
-- [V2 methodology](docs/benchmark-v2-methodology.md)
-- [V2 results and interpretation](evidence/2026-09-27-diagnostics-v2/README.md)
-- [V2 machine-readable coverage](evidence/2026-09-27-diagnostics-v2/coverage.json)
-- [V2 evidence manifest](evidence/2026-09-27-diagnostics-v2/evidenceManifest.json)
+These are separate paths: **do not add parse-only and locate-only to predict
+end-to-end**. The ranking describes this exact byte-to-value task, rather than
+universal full-DOM parsing speed. `lol_html` has no retained-tree parse-only or
+pre-parsed-locate row. Its output also passed 1-byte, 7-byte, and 64 KiB chunk
+boundary checks. Time-to-first-output and allocation counts were not measured.
 
-V2 retains 3,105 timed matrix records, 135 extraction records, 30 conformance
-cases, eight malformed/recovery fixtures, and three expected repeated-Contract
-resource-bound outcomes. It deliberately emits no cross-format aggregate and
-does not change the public Baseline v1 KPI scoreboard.
+## What the complete suite measures
 
-## What is measured
+| Lane | Workload | How we measure it |
+| --- | --- | --- |
+| Parser / selector | Small catalog; 17.2 MB hard catalog | Warm phase timings, separate cold starts, sampled process RSS and CPU |
+| HTTP | 64 loopback pages; immediate or 20 ms delay | Five campaigns at concurrency 1, 4, 8; exact ordered values |
+| Rendered browser Request | Four delayed-script loopback pages | Three campaigns at concurrency 1, 2, 4; exact values and browser cleanup |
+| V2 diagnostics | 36 document/query/projection cells plus typed extraction | Separate five-campaign cells, conformance, malformed-input, and resource-bound checks |
 
-Correctness is the admission gate. Admitted arms retain internal latency,
-outer process wall time, throughput, peak/mean/p95 RSS where available, CPU,
-cold startup, package or runnable footprint, language/runtime identity,
-streaming mode, concurrency scaling, and browser cleanup. A metric is reported
-only where its runner actually measured it; one metric is never inferred from
-another.
+V2 covers HTML, XML, JSON, decoded text, rendered DOM, and accessibility trees.
+It has no cross-format aggregate or public KPI score. Browser automation,
+hosted APIs, paid services, persistent sessions, and Actions are outside this lab.
 
-## Verify the retained evidence
+## Reproduce and inspect
 
-Python environments are managed by uv from one lock with quadrant-specific
-groups:
+See [complete rerun instructions](docs/rerunning.md),
+[parser methodology](docs/parser-selector-methodology.md),
+[V2 methodology](docs/benchmark-v2-methodology.md),
+[metric definitions](docs/metrics.md), and [coverage boundaries](docs/coverage-gaps.md).
 
-```bash
-uv sync --only-group parser
-uv sync --only-group http
-uv sync --only-group browser
-```
+Earlier results remain preserved in [the historical September baseline](docs/baseline-v1.md)
+and [its evidence register](evidence/baseline-v1.json). They describe their own
+source, compiler, dependency, and browser identities.
 
-The retained evidence itself needs only the standard library to verify:
-
-```bash
-python3 tools/verifyBaseline.py
-```
-
-That command checks every evidence-manifest byte count and SHA-256 digest, all
-retained correctness/cleanup gates, and the HTTP/browser summary medians. Full
-rerun boundaries and commands are in [the Baseline v1 report](docs/baseline-v1.md).
-
-## Evidence rule
-
-An arm that returns the wrong values, order, multiplicity, terminal status, or
-required cleanup state has no ranked timing. Failed, unsupported, and
-resource-bounded outcomes stay visible rather than being silently dropped.
-
-## Public versus internal results
-
-The public caveman lane is pure Rust through Yosoi's public Rust surface or a
-small release binary. Python and future Node bindings belong in a separate
-Yosoi-versus-Yosoi overhead suite; their timings are never averaged into or
-substituted for the Rust result.
-
-## Repository map
-
-- `docs/`: scope, taxonomy, methodology, decisions, and the closeout report.
-- `specs/`: machine-readable benchmark and competitor contracts.
-- `schemas/`: JSON Schemas for specifications and result envelopes.
-- `fixtures/`: deterministic offline parser corpora and manifests.
-- `adapters/`: isolated competitor and Yosoi benchmark surfaces.
-- `tools/`: fixture generation, runners, builders, reporting, and verification.
-- `evidence/`: retained raw records, summaries, and sealed manifests.
-- `results/`: ignored scratch output for reruns.
-
-## Closeout boundary
-
-Baseline v1 records where Yosoi started. Optimization, replacement evidence,
-and any future headline graph belong to the separate Yosoi Optimization project.
-Format/query/extraction breadth is retained in internal Diagnostic Baseline v2
-and does not change the public KPI. This repository remains the independent
-harness and historical evidence source.
+This is one workstation and a frozen workload, with exact output required before
+ranking. Sampled RSS, CPU time, warm latency, startup, and package size are
+separate measurements; none substitutes for another.

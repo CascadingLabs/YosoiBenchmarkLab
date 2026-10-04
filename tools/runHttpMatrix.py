@@ -8,6 +8,7 @@ import random
 import resource
 import statistics
 import subprocess
+import tempfile
 import time
 from pathlib import Path
 from typing import Any
@@ -68,12 +69,19 @@ def run(command_value: list[str], cwd: Path) -> dict[str, Any]:
     environment["NODE_OPTIONS"] = "--max-old-space-size=1536"
     before = resource.getrusage(resource.RUSAGE_CHILDREN)
     started = time.perf_counter_ns()
-    process = subprocess.Popen(command_value, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=environment)
-    rss_samples: list[int] = []
-    while process.poll() is None:
-        rss_samples.append(process_tree_rss(process.pid))
-        time.sleep(0.01)
-    stdout, stderr = process.communicate()
+    with tempfile.TemporaryFile(mode="w+") as out, tempfile.TemporaryFile(mode="w+") as err:
+        process = subprocess.Popen(command_value, cwd=cwd, stdout=out, stderr=err, text=True, env=environment)
+        rss_samples: list[int] = []
+        deadline = time.monotonic() + 180
+        while process.poll() is None:
+            rss_samples.append(process_tree_rss(process.pid))
+            if time.monotonic() >= deadline:
+                process.kill()
+                process.wait()
+                raise RuntimeError("HTTP adapter exceeded its 180-second deadline")
+            time.sleep(0.01)
+        out.seek(0); err.seek(0)
+        stdout, stderr = out.read(), err.read()
     outer_wall = time.perf_counter_ns() - started
     after = resource.getrusage(resource.RUSAGE_CHILDREN)
     if process.returncode != 0:

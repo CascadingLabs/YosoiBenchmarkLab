@@ -13,7 +13,7 @@ const crawler = new PlaywrightCrawler({
   minConcurrency: concurrency,
   maxRequestRetries: 0,
   requestHandlerTimeoutSecs: 45,
-  launchContext: { launchOptions: { executablePath, headless: true } },
+  launchContext: { launchOptions: { executablePath, headless: true, chromiumSandbox: true } },
   requestHandler: async ({ page, request }) => {
     const index = Number(request.userData.index);
     values.set(index, await page.locator('span.value').textContent());

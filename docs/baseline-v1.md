@@ -1,5 +1,10 @@
 # Baseline v1: what we ran, what failed, and what to optimize
 
+This is the historical **2026-09-27** baseline. Its measurements and targets
+describe the recorded source artifacts and environment. See
+[Current benchmark results](current-results.md) for the latest rerun and
+[Rerun the complete lab](rerunning.md) for reproducible commands.
+
 ## Plain English
 
 This lab answers one question: where is Yosoi fast or slow before optimization?

@@ -1,5 +1,9 @@
 # Measurement contract
 
+Current evidence: [2026-10-04 benchmark results](current-results.md).
+The latest run includes the ranked `lol_html` caveman control and retained
+resource-stopped browser cells.
+
 ## Principle
 
 Measure facts that answer different questions. Do not publish several names for
@@ -59,10 +63,24 @@ streaming claim additionally requires:
 - explicit end-of-input and backpressure behavior;
 - no hidden full-input buffering in the adapter.
 
-A streaming parser such as `lol_html` is not placed in the queryable-DOM chart.
-It receives a separate equivalent streaming scan task if that task is added.
+The `lol_html` control is included in the caveman byte-to-value ranking after
+passing the same frozen oracle and chunk-boundary checks. Its public
+`HtmlRewriter` selector/text handlers do not provide a retained queryable DOM,
+so parse-only and pre-parsed-locate columns are unavailable for that arm.
+No queryable-DOM equivalence or time-to-first-output result is inferred.
+
+The current Yosoi byte-to-value arm uses default `Document::locate` routing,
+which may stream eligible plans over already resident bytes. Its explicit
+parse and pre-parsed locate rows remain separate retained-tree operations.
+The V1 `streamingMode: fullBuffer` package field describes complete input
+delivery, not a claim that every operation constructs a DOM. This suite has
+no incremental-input or time-to-first-output evidence.
 
 ## Scaling curve
+
+The comparative parser suite measures the caveman and hard sizes; V2 measures
+32, 64, and 4,096 records separately per semantic cell. The following four-point
+scaling curve is a desired extension, not evidence already collected by those suites.
 
 Run the same semantic task over at least four frozen size classes: approximately 88 KiB caveman,
 approximately 1 MiB, approximately 8 MiB, and the 12–24 MiB hard catalog. Report

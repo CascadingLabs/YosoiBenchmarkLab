@@ -1,0 +1,935 @@
+{
+  "schemaVersion": "yosoi.benchmark.evidence-manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6839,
+      "sha256": "e735d85efc9687d6b4ff6b546a8d2a81f6b359a01169121f8ecd2d688a5d5ae7"
+    },
+    {
+      "path": "raw/cavemanK5/raw.jsonl",
+      "bytes": 193780,
+      "sha256": "2c27732cc9cb5345a6e85298a59c760bbdde5d0238dc69caa93398d3a15138b5"
+    },
+    {
+      "path": "raw/cavemanK5/summary.json",
+      "bytes": 20229,
+      "sha256": "f18461f82be7dcc503d7a439bc56ac7bb01527fca7cfc8f9c65a678c272ef4f8"
+    },
+    {
+      "path": "raw/cavemanK5/summary.md",
+      "bytes": 956,
+      "sha256": "67b7760c1d36656d3c89485c956d69b95a117fb0a5a210b298d1320b131f0ed2"
+    },
+    {
+      "path": "raw/competitors-v1.json",
+      "bytes": 1898,
+      "sha256": "c496c410ec0f991f8ec5ad515f7ef47f2f86d9ccd3e3c5dd912cd66e212f9560"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign0.stderr.txt",
+      "bytes": 1391,
+      "sha256": "832123fa88635c3c29b48040434ee819918ebc7b071936db148f562de255966b"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign0.stdout.txt",
+      "bytes": 492,
+      "sha256": "75d528d5e325191c8df0ee7896cc6d5d73946928b62168ac2f59df99622c125a"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign1.stderr.txt",
+      "bytes": 841,
+      "sha256": "10f63d78d0c68364d92c65a04b7d295bc21e5099e39089180b63931f92fd2041"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign1.stdout.txt",
+      "bytes": 490,
+      "sha256": "599b783a1db8cc38a3a3729d59142f11cbb8323c9858ec4faf5a8b6c1f0a4dc4"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign2.stderr.txt",
+      "bytes": 841,
+      "sha256": "8fda7bc13a9efbea4e370614937258862eac91e7d97c1405a94840320ab53777"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign2.stdout.txt",
+      "bytes": 513,
+      "sha256": "476d69124e9206461aa6bbda2f3b3f642a662c20560dbb7c339a3c1f28465140"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign3.stderr.txt",
+      "bytes": 841,
+      "sha256": "d41701d203fa414e872b422333d870e870a7e210598023e5e96d57a779b435aa"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign3.stdout.txt",
+      "bytes": 466,
+      "sha256": "246747bcc36e340217898f03c771e58f3f3666fdbcee6c78f97d2e6d0a178052"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign4.stderr.txt",
+      "bytes": 841,
+      "sha256": "6811a7a82dd557f3fd4fcfbf65e9870cda252f0e42ef538d9e54efd5a1948bcc"
+    },
+    {
+      "path": "raw/criterionRustScraper/campaign4.stdout.txt",
+      "bytes": 488,
+      "sha256": "1867f34eb9e74a6ddb0bd312a462e0dc1af06393e0fd1ed3c641ce35b333ee42"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign0/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign0/estimates.json",
+      "bytes": 979,
+      "sha256": "9f4b9c6109adb740763c4b618ad62c165e8be4d53d10f6b9dfe030ecb6e2ce6b"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign0/sample.json",
+      "bytes": 1728,
+      "sha256": "67740f1d2b9772ad9f58fef6dce1242e3db82ed4db4df7f3386c45646ad04a90"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign0/tukey.json",
+      "bytes": 73,
+      "sha256": "348b643bff3095488eaf06b02b3c22a96db8a3bc5e43c10b076f68427646f9a6"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign1/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign1/estimates.json",
+      "bytes": 976,
+      "sha256": "da235a1e6d0e4c1e08e08cc47e4f497e7fe53a0c84fcedda8738a6c76bec59f5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign1/sample.json",
+      "bytes": 1729,
+      "sha256": "3909534a7857575cfd69a2b13ddaf330d986aa3c53c47623a80325960255deec"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign1/tukey.json",
+      "bytes": 72,
+      "sha256": "2d3bdf89a63d7e49b2cc86c4cbd2380f94dae1690a3ec45d213847b092defbc3"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign2/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign2/estimates.json",
+      "bytes": 976,
+      "sha256": "90cca98403f9622b1d737b381215eeffb5013720a238e0981b15643ba10acf81"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign2/sample.json",
+      "bytes": 1727,
+      "sha256": "197d9a06e04497d8363139f6217a38fbb623fc806c7892837c89aaf7ef7c5141"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign2/tukey.json",
+      "bytes": 73,
+      "sha256": "4c8dd34f05d543a6e1910cb6da3e9c549cf215d44880d9b2292a8a68fef8788e"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign3/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign3/estimates.json",
+      "bytes": 977,
+      "sha256": "7df4bfd3c1e61eb9a73918a816b975d42104fccb75bede1519147d70a68391b4"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign3/sample.json",
+      "bytes": 1728,
+      "sha256": "92acdcc49c6736ed0b77edf756574f93ae4dbd9d5d426142dcae1b81c6a28ecb"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign3/tukey.json",
+      "bytes": 72,
+      "sha256": "8841107cf1c86ace8dc6f0c4f36933686798debd21696808a1b7a05f3bf9344c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign4/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign4/estimates.json",
+      "bytes": 964,
+      "sha256": "badf8bb3e7566b135d7f10f695c7f337c0204a3d04f1ded3a8941c675c9bafd5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign4/sample.json",
+      "bytes": 1729,
+      "sha256": "2b64bdd1f8cd9677a55022a1676358c7013e579e3f278b77e15bccb8bd258ac0"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/campaign4/tukey.json",
+      "bytes": 72,
+      "sha256": "84493262029452d1d650656557a97622ba153fbb95031624a390195fd296898a"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/new/benchmark.json",
+      "bytes": 193,
+      "sha256": "67762b7f21ea94b53684916879188be0601976091486bcd3aff3e1102cf4b61c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/new/estimates.json",
+      "bytes": 964,
+      "sha256": "badf8bb3e7566b135d7f10f695c7f337c0204a3d04f1ded3a8941c675c9bafd5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/new/sample.json",
+      "bytes": 1729,
+      "sha256": "2b64bdd1f8cd9677a55022a1676358c7013e579e3f278b77e15bccb8bd258ac0"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_endToEnd/new/tukey.json",
+      "bytes": 72,
+      "sha256": "84493262029452d1d650656557a97622ba153fbb95031624a390195fd296898a"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign0/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign0/estimates.json",
+      "bytes": 981,
+      "sha256": "86d10643383b8e55d828e5b1280734fd52dbb4617dc72a8bc9830f7d51465b75"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign0/sample.json",
+      "bytes": 1806,
+      "sha256": "8bc834b7d726cf3a9e0fa72f5167ca32437a538098b0a302cb998e6e98e97dd5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign0/tukey.json",
+      "bytes": 74,
+      "sha256": "754d5f2e4e3d17522dd6e06adcf6caf1d0f7404ed6c7a4127df3acab845693a1"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign1/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign1/estimates.json",
+      "bytes": 984,
+      "sha256": "c379a3613f2c84cb80eabbc657c9d999981d2b96df1edcecda0a5d56fbdd0b7c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign1/sample.json",
+      "bytes": 1808,
+      "sha256": "29c5137017abf9eb9510cd7c7941e2154d8313255c640698aadaf9a1085ebc95"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign1/tukey.json",
+      "bytes": 75,
+      "sha256": "1fbb0f488797ac70062d412c18eda8f1862bb1dba1d4e33421dfbf793ce8284d"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign2/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign2/estimates.json",
+      "bytes": 975,
+      "sha256": "fbcf9e1550d3b95b4ed35f2a8888838ed4f4450eb68630c6ad3a626e441f25a1"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign2/sample.json",
+      "bytes": 1812,
+      "sha256": "6b64188b09055f3f0c04586150f1f8ba7dfdfb691bdc72290accd2f1d6a31bea"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign2/tukey.json",
+      "bytes": 76,
+      "sha256": "d8c9dd9f06aa23144254593fe543795fc83b067cc46ab0d005c931b4b08ac142"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign3/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign3/estimates.json",
+      "bytes": 982,
+      "sha256": "888e3d7827c6b3055b16e5263ab8ccc0e26c7360338c2fad7424c1f43a458ed4"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign3/sample.json",
+      "bytes": 1813,
+      "sha256": "61684c7ad88ef9daee7b29b092501d071e2d58f7d2983bdc20abe19542cc4412"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign3/tukey.json",
+      "bytes": 77,
+      "sha256": "38c62c8acbeacf57994040ed22691cc88df3acaa0d9c2f7904a9f3586ebbcd08"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign4/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign4/estimates.json",
+      "bytes": 982,
+      "sha256": "bb3f6484f14f3f0165eaa8e885479f8614c3715e240f083999f382a9b41ec3af"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign4/sample.json",
+      "bytes": 1809,
+      "sha256": "33c9fcea218ebbbfe916897f8c1aff4b3059e90003a079b0b0abe7391e96356d"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/campaign4/tukey.json",
+      "bytes": 77,
+      "sha256": "230ee10ce1d621f8ec59a4961a35a73f69d6da7e7e1be3f2e6f75e28d98817e5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/new/benchmark.json",
+      "bytes": 185,
+      "sha256": "ff5b9403832174e431499db60ae91fe365cb125be0a3d9474a71e43056a23d05"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/new/estimates.json",
+      "bytes": 982,
+      "sha256": "bb3f6484f14f3f0165eaa8e885479f8614c3715e240f083999f382a9b41ec3af"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/new/sample.json",
+      "bytes": 1809,
+      "sha256": "33c9fcea218ebbbfe916897f8c1aff4b3059e90003a079b0b0abe7391e96356d"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_locate/new/tukey.json",
+      "bytes": 77,
+      "sha256": "230ee10ce1d621f8ec59a4961a35a73f69d6da7e7e1be3f2e6f75e28d98817e5"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign0/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign0/estimates.json",
+      "bytes": 977,
+      "sha256": "916262785577f2f2cce1829547abf690744fc3c2d095e9872443764d3eb8201e"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign0/sample.json",
+      "bytes": 1728,
+      "sha256": "f8a346b2769cec1f09408de27021a46d2c1a3e0ca6a84eebba65980ad47d4746"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign0/tukey.json",
+      "bytes": 73,
+      "sha256": "9284d9214006fbfa84261d4652beaa9ce5188282fc1a4ae2d50862f0d673f0ff"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign1/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign1/estimates.json",
+      "bytes": 973,
+      "sha256": "521a0af4ce78f8a1dcf59a9f502c7438abe15806ab63a11a633d39fb245343db"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign1/sample.json",
+      "bytes": 1729,
+      "sha256": "4097ec052e45de51313964937b3f71ae9708ed279f195fa281817a333b4d4e4d"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign1/tukey.json",
+      "bytes": 73,
+      "sha256": "8a6f516b74e1495402f04438bed6c8f191fd99871329e15778f057bc80b759e3"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign2/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign2/estimates.json",
+      "bytes": 971,
+      "sha256": "f2d9dc3253768bd4fea53f80645248b8222b99239e4eddd98db6f4674738b743"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign2/sample.json",
+      "bytes": 1724,
+      "sha256": "71437d0c3cae772bd7b5b0d57f0ec54381d797d8d70eeafb8dfe183351865d2c"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign2/tukey.json",
+      "bytes": 73,
+      "sha256": "f14af4971d446ab49faef21ba28c1e85680b17b19a6e0ea25cae6dde5ed2b149"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign3/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign3/estimates.json",
+      "bytes": 973,
+      "sha256": "f436ff57583582722431d20f65e1d35b3c8327adc93892907910038dc5e26636"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign3/sample.json",
+      "bytes": 1723,
+      "sha256": "fe5a3acf559d862b3a861b4d13e635783f3f6d5ffc11913c65effbcc89918fef"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign3/tukey.json",
+      "bytes": 71,
+      "sha256": "985b42acb478bcca241dabaf517d93256dd75ca092c7a7d11333d66ee18a25b1"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign4/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign4/estimates.json",
+      "bytes": 970,
+      "sha256": "066e75880c552c86380c2c2d5a977e3e6815fbbfc3be85e9e3fb1d067fea79f7"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign4/sample.json",
+      "bytes": 1725,
+      "sha256": "4d2952959ea36ef313b5901704a83af99b8e138ce4790e26438243d7b87b8dbf"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/campaign4/tukey.json",
+      "bytes": 73,
+      "sha256": "b2e1202242f3bae669d709575496ccb72ab659d1fc8c234279ef2fcd15915939"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/new/benchmark.json",
+      "bytes": 181,
+      "sha256": "6a64e872f6acfc1852b6666a0f86d4b18160cd2c5a37bbfa2013945912023501"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/new/estimates.json",
+      "bytes": 970,
+      "sha256": "066e75880c552c86380c2c2d5a977e3e6815fbbfc3be85e9e3fb1d067fea79f7"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/new/sample.json",
+      "bytes": 1725,
+      "sha256": "4d2952959ea36ef313b5901704a83af99b8e138ce4790e26438243d7b87b8dbf"
+    },
+    {
+      "path": "raw/criterionRustScraper/criterion/rustScraper_parse/new/tukey.json",
+      "bytes": 73,
+      "sha256": "b2e1202242f3bae669d709575496ccb72ab659d1fc8c234279ef2fcd15915939"
+    },
+    {
+      "path": "raw/criterionRustScraper/identity.json",
+      "bytes": 261,
+      "sha256": "8797f836840fd026246f538425722052a1b943901c75ba2eb442116fd2238b62"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign0.stderr.txt",
+      "bytes": 2681,
+      "sha256": "13cf6b6951721a9b80712e64bea4895c03280658d9717202f90f2c4c24f2ca51"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign0.stdout.txt",
+      "bytes": 368,
+      "sha256": "005c8acb64cf12dafe33bb4f89bc67399b495c065bfe2610c003c309e7c09992"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign1.stderr.txt",
+      "bytes": 817,
+      "sha256": "b413a8cf57a16fdac099e49e7582f98994badb35bbc3412eac9fd843fa44333f"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign1.stdout.txt",
+      "bytes": 438,
+      "sha256": "fe2390a4d2d35b1eac2604f1bd5d2cde6e31c57457656bd80e1a84d0614b80a8"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign2.stderr.txt",
+      "bytes": 817,
+      "sha256": "de43194090699a503e27a739edd8fc60627d19dfc3c054b525e2550bcf51b0eb"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign2.stdout.txt",
+      "bytes": 418,
+      "sha256": "b078e36fa62f6175fd292f9a72b8482891475b6e6683790ff49356ae8864d685"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign3.stderr.txt",
+      "bytes": 966,
+      "sha256": "62b307ce0474977c28de2df24373e6316895a2a1b03d37922e68b02ea65dacc0"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign3.stdout.txt",
+      "bytes": 464,
+      "sha256": "67ee4a621a6f23da6c9a9bcd8e1413ffb1d4c6c617251f0d0f576a7f2a79d260"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign4.stderr.txt",
+      "bytes": 966,
+      "sha256": "14397c836ffdfdb85fa949d96b525e46d29a14cffd5b7de1e61df4420b1b7f85"
+    },
+    {
+      "path": "raw/criterionYosoiRust/campaign4.stdout.txt",
+      "bytes": 511,
+      "sha256": "9f603b572b2c168c04e50e7bd0b0bcd261789069019122915be5b2a44f9618c4"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign0/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign0/estimates.json",
+      "bytes": 972,
+      "sha256": "12a01a6e05ddbf9f6426a4ac4d9ec6c29d4c9d5fc2cbc5842ab5a57ff98c26e5"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign0/sample.json",
+      "bytes": 1757,
+      "sha256": "d048c7b7098c00206186c719eb13b752aa0172e6af6b201169e3e55923ebfcae"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign0/tukey.json",
+      "bytes": 75,
+      "sha256": "37dd0fef4fb4f6d4c4102abd3874de8da2398026e9c2ba1ec5ac6856a42b00d4"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign1/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign1/estimates.json",
+      "bytes": 970,
+      "sha256": "2cd8add0ad051f9c48e65e74bdbf11f5f38c8941c6b5bcf1b0981ac2b0f4cb23"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign1/sample.json",
+      "bytes": 1773,
+      "sha256": "998bef9127a9ff0af45ac11f1de2262ca819e297a851d91fbcad4c7d3722f78b"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign1/tukey.json",
+      "bytes": 74,
+      "sha256": "654467b28aa6de67a1a3126f631159af13cda5678ac6d0de633f180bea68ae2f"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign2/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign2/estimates.json",
+      "bytes": 975,
+      "sha256": "d0ac53da7c24fc07b0da744ac705af7aca90361d797a8102b14fce161440ac6f"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign2/sample.json",
+      "bytes": 1753,
+      "sha256": "ee5bc810bf0058a16eb72a81107fe2510f8f2df7986eef7ae96f48614d42ad66"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign2/tukey.json",
+      "bytes": 74,
+      "sha256": "47cd732913f438b533f93488d39d8834a3fcc5a1678eacff786a10a2e5637f55"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign3/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign3/estimates.json",
+      "bytes": 970,
+      "sha256": "638d97f6926dac1ccfe487c1ad316646dda960f42548adf12c0e3cafe3243be7"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign3/sample.json",
+      "bytes": 1753,
+      "sha256": "9bf190d2ac7f0e8d673c5e4ebd5d5b7cd93487a0ac5e5069aa56c917d258c1b8"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign3/tukey.json",
+      "bytes": 72,
+      "sha256": "6c01216d0a4dbc49958282877621feca0117607608008df9c361deb7d235c97e"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign4/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign4/estimates.json",
+      "bytes": 974,
+      "sha256": "4e3e2895e5874c9d54176ef9faa4d1fd6574682f423c700b454a4ec18c92e6e6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign4/sample.json",
+      "bytes": 1777,
+      "sha256": "19fbc19859416c8133ca693aeae594e751fc6ab7fcafc0ad371c77a2c067fa94"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/campaign4/tukey.json",
+      "bytes": 74,
+      "sha256": "a58ee584ce80941dfe0b48c8f59a6e0b4e7f0a9ae3306f093e94b26c3c8093cb"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/new/benchmark.json",
+      "bytes": 185,
+      "sha256": "191c18058720ef12b7307d288c7088012cbb94f1ec58683a377cccfc674c3489"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/new/estimates.json",
+      "bytes": 974,
+      "sha256": "4e3e2895e5874c9d54176ef9faa4d1fd6574682f423c700b454a4ec18c92e6e6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/new/sample.json",
+      "bytes": 1777,
+      "sha256": "19fbc19859416c8133ca693aeae594e751fc6ab7fcafc0ad371c77a2c067fa94"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_endToEnd/new/tukey.json",
+      "bytes": 74,
+      "sha256": "a58ee584ce80941dfe0b48c8f59a6e0b4e7f0a9ae3306f093e94b26c3c8093cb"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign0/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign0/estimates.json",
+      "bytes": 976,
+      "sha256": "2ca91c964764f776035105728010e1e6f48e2988e0dadcaf1a1ea82bcf01e5d8"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign0/sample.json",
+      "bytes": 1802,
+      "sha256": "3ba36dbd91f48f3d5600f4f3abd754fc2e8ccfa31fda309de21dbc571cd8179b"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign0/tukey.json",
+      "bytes": 76,
+      "sha256": "dd506e01d4563dceeeda2bd9ffb77c66917e7664704e16e190b37e19f31fe514"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign1/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign1/estimates.json",
+      "bytes": 979,
+      "sha256": "66712f8842a16edd6e2cf9440b719b7f0b7774b12a782af88fbb031b89898702"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign1/sample.json",
+      "bytes": 1800,
+      "sha256": "56d20d7086afa43dadd462c933861830e7d1453951cc7050da4609cc0e481c94"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign1/tukey.json",
+      "bytes": 75,
+      "sha256": "0904e83afb327372d3b641cf3c009492671ae707d7b0da4d041750e4d2f586f8"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign2/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign2/estimates.json",
+      "bytes": 967,
+      "sha256": "87c7d0eb820663525028158308ec98d88ffe80a11a27c6e1b2384063e568d57d"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign2/sample.json",
+      "bytes": 1802,
+      "sha256": "4aa12a43a300d9237b2e23659928d7925e88e9dd604b4b375e994b4763824c53"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign2/tukey.json",
+      "bytes": 73,
+      "sha256": "f7d1afb323141405a85761c7a5c71e82c66d505f3c60a9166724efcba69865c1"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign3/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign3/estimates.json",
+      "bytes": 981,
+      "sha256": "3005d24e53d6e20af784a618edfea721107dac2a8dd47f0b594b5894b1f2fb6b"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign3/sample.json",
+      "bytes": 1799,
+      "sha256": "331e9653c46d2f4a1088dae8f3c1f39da65f3f77d979e4c9fe58c9e8a5514659"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign3/tukey.json",
+      "bytes": 75,
+      "sha256": "9b6fe22c91b9fd0ad0136c846305045f25c46fdddf9740693f57961cfedd6e1c"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign4/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign4/estimates.json",
+      "bytes": 976,
+      "sha256": "788cd6dcc8c141c263da610670a25e5066bdd948b7b3ab3476795ef2fc8941db"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign4/sample.json",
+      "bytes": 1799,
+      "sha256": "28b1e5a1023d47a392d2d4eac1bba500914edd55db8215fd767be74565d5d4ee"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/campaign4/tukey.json",
+      "bytes": 76,
+      "sha256": "90be3df5eb8a8b17870008cfc7d029252ccc130bb4106261fe0efa40172f1f7a"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/new/benchmark.json",
+      "bytes": 177,
+      "sha256": "32b7babc83c615d0cd6a42372aac5ce79624ffac48c0691b2337e66cfdb03cc6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/new/estimates.json",
+      "bytes": 976,
+      "sha256": "788cd6dcc8c141c263da610670a25e5066bdd948b7b3ab3476795ef2fc8941db"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/new/sample.json",
+      "bytes": 1799,
+      "sha256": "28b1e5a1023d47a392d2d4eac1bba500914edd55db8215fd767be74565d5d4ee"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_locate/new/tukey.json",
+      "bytes": 76,
+      "sha256": "90be3df5eb8a8b17870008cfc7d029252ccc130bb4106261fe0efa40172f1f7a"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign0/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign0/estimates.json",
+      "bytes": 977,
+      "sha256": "9f38aa15a79c978afbbb990a74d73391582aafaeb4d01dbe0ab332f41139152c"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign0/sample.json",
+      "bytes": 1631,
+      "sha256": "fe07df5bd12456aec7deb727cd6dd8e6752bb5ba6640a8c1075c94959b4e8d73"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign0/tukey.json",
+      "bytes": 78,
+      "sha256": "ba89ee16c88fbc691cf465e2c5f6f6d26b6cfc3b5fc7ce8a0d67aceede28284f"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign1/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign1/estimates.json",
+      "bytes": 980,
+      "sha256": "7b31a47f4063e911153f41340d631b3e790250d6cc052379452eb073d8298244"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign1/sample.json",
+      "bytes": 1729,
+      "sha256": "6ae6bdca986166057bf4e06e1e759aaad56350c36c4041f511f5ddd4cb42cac4"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign1/tukey.json",
+      "bytes": 73,
+      "sha256": "4edc937c20bd738f3909d3058f6839dc2057f6fbc4def387419141b4c9b2f33a"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign2/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign2/estimates.json",
+      "bytes": 977,
+      "sha256": "b67618a58c85a167477c2b9a871cd6761cd59e936c42720b22e858234a2ac2cb"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign2/sample.json",
+      "bytes": 1730,
+      "sha256": "43fe03302723b741a9e0d04391c8699837af59e744eabeb01af76261f288ea90"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign2/tukey.json",
+      "bytes": 71,
+      "sha256": "2858000a98bf8dc32102b2e5cad16e99787c077ba6feaf3c4c7d2b4839e922c3"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign3/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign3/estimates.json",
+      "bytes": 968,
+      "sha256": "b716c434ceae8259fdb13db7164e5316406767173a7c99675d38e3b2bd823ce6"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign3/sample.json",
+      "bytes": 1629,
+      "sha256": "1665261d86ed65e91d22b5102cc227305d91f6943a31aada7d23b3bbd524b3a2"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign3/tukey.json",
+      "bytes": 74,
+      "sha256": "20265dc416f411f12d01e184fa62569ed775e0fab2bc5476c3c878ce41cf4579"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign4/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign4/estimates.json",
+      "bytes": 977,
+      "sha256": "8d04a6c4d6c7455532360c7404a2a0be9bf95cfaa3a18f76c30ee2d728d985df"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign4/sample.json",
+      "bytes": 1626,
+      "sha256": "414e0eaf03e9ab94f3cf9cc9208db021642797c63d4c6274bdcd2c9efc04f403"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/campaign4/tukey.json",
+      "bytes": 72,
+      "sha256": "495a62e4068a37b6933a458bb147b116592014a7604ac12f3726cb8f0d182ff0"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/new/benchmark.json",
+      "bytes": 173,
+      "sha256": "0dd617a8e88466cdcabaad9223e6b70d693725d84350eb03a549485091fb7253"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/new/estimates.json",
+      "bytes": 977,
+      "sha256": "8d04a6c4d6c7455532360c7404a2a0be9bf95cfaa3a18f76c30ee2d728d985df"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/new/sample.json",
+      "bytes": 1626,
+      "sha256": "414e0eaf03e9ab94f3cf9cc9208db021642797c63d4c6274bdcd2c9efc04f403"
+    },
+    {
+      "path": "raw/criterionYosoiRust/criterion/yosoiRust_parse/new/tukey.json",
+      "bytes": 72,
+      "sha256": "495a62e4068a37b6933a458bb147b116592014a7604ac12f3726cb8f0d182ff0"
+    },
+    {
+      "path": "raw/criterionYosoiRust/identity.json",
+      "bytes": 261,
+      "sha256": "8797f836840fd026246f538425722052a1b943901c75ba2eb442116fd2238b62"
+    },
+    {
+      "path": "raw/environment.json",
+      "bytes": 12201,
+      "sha256": "d64b9e1a9bb1fadeb09a69840d0f58dcac28ae32da650976fad79f0d81dd9028"
+    },
+    {
+      "path": "raw/fixtureManifest.json",
+      "bytes": 2198,
+      "sha256": "2fa87f7f12453c33086d734000567ab28417d56c97e353d556a70072052deba1"
+    },
+    {
+      "path": "raw/hardK5/raw.jsonl",
+      "bytes": 151028,
+      "sha256": "889934336b8ad7be11412a817a93b04c4ec29feadafba45769ec9d3af6959905"
+    },
+    {
+      "path": "raw/hardK5/summary.json",
+      "bytes": 13930,
+      "sha256": "cf76887637d5e1acc05f569a4e470f18fae137abc5285887f8cef37ed2e2503c"
+    },
+    {
+      "path": "raw/hardK5/summary.md",
+      "bytes": 537,
+      "sha256": "74f039b33ac598d856581380ae6b49f15bb1f9049cf9a69580fedc5c23187ccc"
+    },
+    {
+      "path": "raw/hardSmokeAndResources/raw.jsonl",
+      "bytes": 82185,
+      "sha256": "1f6090532bb8ae5fc83feaf9f3aa8daf4a01a36a28aae50ebf4947857157b8c0"
+    },
+    {
+      "path": "raw/hardSmokeAndResources/summary.json",
+      "bytes": 51256,
+      "sha256": "e1ff50299bc20ba7cce3fa181a9f434ce7d618933009ad88a0e4e709fc8e3e0a"
+    },
+    {
+      "path": "raw/hardSmokeAndResources/summary.md",
+      "bytes": 2259,
+      "sha256": "e988e7f6af6c084d1167a4efd033ae24da435359f6b161e6d8888a0db44ee9f6"
+    },
+    {
+      "path": "raw/lolHtml.Cargo.lock",
+      "bytes": 14044,
+      "sha256": "2c7d53e0bdc712643a5ae5260f07f29225438cfa5bd5103e6059aea501130ef2"
+    },
+    {
+      "path": "raw/lolHtml.artifact.json",
+      "bytes": 103,
+      "sha256": "18b562037c311e0229f126e489b996b7f559ca4b40c13d98389a76f4bcf6fae6"
+    },
+    {
+      "path": "raw/parser-selector-v1.json",
+      "bytes": 4524,
+      "sha256": "503137d6e306b5bd17b8e02684ab5ce21ecdd2c507bf3184cac90436ecca66e8"
+    },
+    {
+      "path": "raw/rustScraper.Cargo.lock",
+      "bytes": 21385,
+      "sha256": "e6e0f88a0f6eb275ccbed4c5899a6fd33fa232bca4517579eb8cc5ffd7720f3f"
+    },
+    {
+      "path": "raw/yosoiRust.Cargo.lock",
+      "bytes": 53564,
+      "sha256": "7f2e3eceb4ed54850bd7fbd9842f690a1af549e11e742b1090a3116e861560ec"
+    },
+    {
+      "path": "raw/yosoiRust.artifact.json",
+      "bytes": 103,
+      "sha256": "a3a513925859e9360fb4edb0d5227f96ed5082382f9eaadfe434cdb4bc7cf19d"
+    },
+    {
+      "path": "raw/yosoiRust.identity.json",
+      "bytes": 381,
+      "sha256": "0f5046e83d585901f0be69f4f56ceb9692f92ce2b64c0c1166d35f36a01efd35"
+    }
+  ]
+}
